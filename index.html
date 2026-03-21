@@ -15,9 +15,7 @@
     --gold: #C4A265;
     --gold-light: #D4B87A;
     --gold-dark: #A88845;
-    --red: #9B1C1C;
     --red-light: #B91C1C;
-    --navy: #0A0A0A;
     --white: #FFFFFF;
     --off-white: #F5F5F5;
     --warm-gray: #EFEFEF;
@@ -41,14 +39,14 @@
     position: fixed;
     top: 0; left: 0; right: 0;
     z-index: 100;
-    background: rgba(0, 0, 0, 0.97);
+    background: rgba(0,0,0,0.97);
     backdrop-filter: blur(8px);
     padding: 0 2rem;
     height: 68px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 1px solid rgba(196, 162, 101, 0.2);
+    border-bottom: 1px solid rgba(196,162,101,0.2);
   }
 
   .nav-logo {
@@ -91,7 +89,7 @@
 
   .nav-cta:hover { background: var(--gold-light) !important; }
 
-  /* ── SHARED LAYOUT ── */
+  /* ── SHARED ── */
   section { padding: 6rem 2rem; }
   .container { max-width: 1060px; margin: 0 auto; }
 
@@ -138,7 +136,7 @@
 
   .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
 
-  .btn-outline {
+  .btn-outline-gold {
     border: 1px solid rgba(196,162,101,0.5);
     color: var(--gold);
     padding: 0.9rem 2rem;
@@ -152,7 +150,7 @@
     display: inline-block;
   }
 
-  .btn-outline:hover { border-color: var(--gold); background: rgba(196,162,101,0.08); }
+  .btn-outline-gold:hover { border-color: var(--gold); background: rgba(196,162,101,0.08); }
 
   .btn-group {
     display: flex;
@@ -175,23 +173,23 @@
     overflow: hidden;
   }
 
-  #hero .bg-photo {
+  #hero video {
     position: absolute;
     inset: 0;
-    background-image: url('https://images.unsplash.com/photo-1610296669228-602fa827fc1f?w=1800&q=80');
-    background-size: cover;
-    background-position: center;
-    opacity: 0.38;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.4;
   }
 
   #hero .bg-glow {
     position: absolute;
     inset: 0;
-    background: radial-gradient(ellipse 80% 60% at 50% 40%, rgba(196,162,101,0.08) 0%, transparent 70%);
+    background: radial-gradient(ellipse 80% 60% at 50% 40%, rgba(196,162,101,0.06) 0%, transparent 70%);
     pointer-events: none;
   }
 
-  .hero-inner { position: relative; z-index: 2; max-width: 860px; }
+  .hero-inner { position: relative; z-index: 2; max-width: 900px; }
 
   .hero-eyebrow {
     font-size: 0.75rem;
@@ -204,10 +202,10 @@
 
   .hero-headline {
     font-family: 'EB Garamond', serif;
-    font-size: clamp(3rem, 6.5vw, 5.2rem);
+    font-size: clamp(2.6rem, 5.5vw, 4.5rem);
     font-weight: 600;
     color: var(--white);
-    line-height: 1.05;
+    line-height: 1.1;
     margin-bottom: 1rem;
   }
 
@@ -225,8 +223,8 @@
 
   .hero-sub {
     font-size: 1.1rem;
-    color: rgba(255,255,255,0.6);
-    max-width: 580px;
+    color: rgba(255,255,255,0.65);
+    max-width: 620px;
     line-height: 1.8;
     margin: 0 auto 3rem;
   }
@@ -234,45 +232,26 @@
   /* ── OUR STORY ── */
   #story {
     background: #000;
-    position: relative;
-    overflow: hidden;
   }
 
-  #story .bg-photo {
-    position: absolute;
-    inset: 0;
-    background-image: url('https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=1800&q=80');
-    background-size: cover;
-    background-position: center;
-    opacity: 0.22;
-  }
-
-  #story .container { position: relative; z-index: 1; }
+  #story .section-headline { color: var(--white); }
 
   .story-inner { max-width: 780px; margin: 0 auto; text-align: center; }
 
-  .story-inner .section-eyebrow { color: var(--gold); }
-  .story-inner .section-headline { color: var(--white); }
-
-  .story-inner .section-headline em {
-    font-style: italic;
-    color: var(--gold);
-  }
-
   .story-copy {
     font-size: 1.03rem;
-    color: rgba(255,255,255,0.6);
-    line-height: 1.9;
+    color: rgba(255,255,255,0.62);
+    line-height: 1.95;
     margin: 2rem 0;
     text-align: left;
   }
 
-  .story-copy p { margin-bottom: 1.25rem; }
+  .story-copy p { margin-bottom: 1.35rem; }
   .story-copy p:last-child { margin-bottom: 0; }
   .story-copy strong { color: var(--gold); font-weight: 500; }
 
   .video-placeholder {
-    background: rgba(0,0,0,0.45);
+    background: rgba(255,255,255,0.04);
     border-radius: 8px;
     aspect-ratio: 16/9;
     display: flex;
@@ -307,6 +286,46 @@
     font-size: 0.85rem;
     color: rgba(255,255,255,0.4);
     letter-spacing: 0.08em;
+  }
+
+  /* ── IS THIS YOU ── */
+  #isthisyou { background: var(--off-white); }
+
+  .isthisyou-inner { max-width: 780px; }
+
+  .isthisyou-closing {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.25rem;
+    font-style: italic;
+    color: #0A0A0A;
+    margin: 2rem 0 2.5rem;
+    line-height: 1.5;
+  }
+
+  .qualifier-list {
+    list-style: none;
+    margin: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .qualifier-list li {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    font-size: 0.97rem;
+    color: var(--text-body);
+    line-height: 1.65;
+  }
+
+  .qualifier-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--red-light);
+    flex-shrink: 0;
+    margin-top: 0.45rem;
   }
 
   /* ── WHAT MAKES THIS DIFFERENT ── */
@@ -346,22 +365,7 @@
   }
 
   /* ── TWO TIERS ── */
-  #tiers {
-    background: var(--warm-gray);
-    position: relative;
-    overflow: hidden;
-  }
-
-  #tiers .bg-photo {
-    position: absolute;
-    inset: 0;
-    background-image: url('https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=1800&q=80');
-    background-size: cover;
-    background-position: center;
-    opacity: 0.12;
-  }
-
-  #tiers .container { position: relative; z-index: 1; }
+  #tiers { background: var(--warm-gray); }
 
   .tiers-grid {
     display: grid;
@@ -514,22 +518,7 @@
   .tier-apply-note strong { color: var(--gold); font-weight: 500; }
 
   /* ── HOW IT WORKS ── */
-  #how {
-    background: var(--off-white);
-    position: relative;
-    overflow: hidden;
-  }
-
-  #how .bg-photo {
-    position: absolute;
-    inset: 0;
-    background-image: url('https://images.unsplash.com/photo-1509391366360-2e959784a276?w=1800&q=80');
-    background-size: cover;
-    background-position: center;
-    opacity: 0.1;
-  }
-
-  #how .container { position: relative; z-index: 1; }
+  #how { background: var(--off-white); }
 
   .steps {
     margin-top: 3.5rem;
@@ -633,22 +622,8 @@
   }
 
   /* ── CONTACT + NEWSLETTER ── */
-  #contact {
-    background: #000;
-    position: relative;
-    overflow: hidden;
-  }
+  #contact { background: #000; }
 
-  #contact .bg-photo {
-    position: absolute;
-    inset: 0;
-    background-image: url('https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=1800&q=80');
-    background-size: cover;
-    background-position: center top;
-    opacity: 0.18;
-  }
-
-  #contact .container { position: relative; z-index: 1; }
   #contact .section-headline { color: var(--white); }
   #contact .section-sub { color: rgba(255,255,255,0.45); }
 
@@ -661,7 +636,6 @@
   }
 
   .contact-details { display: flex; flex-direction: column; gap: 1.25rem; margin-top: 2rem; }
-
   .contact-item { display: flex; gap: 1rem; align-items: flex-start; }
 
   .contact-icon {
@@ -683,10 +657,7 @@
     margin-bottom: 0.2rem;
   }
 
-  .contact-value {
-    font-size: 0.95rem;
-    color: rgba(255,255,255,0.65);
-  }
+  .contact-value { font-size: 0.95rem; color: rgba(255,255,255,0.65); }
 
   .contact-value a {
     color: rgba(255,255,255,0.65);
@@ -696,7 +667,6 @@
 
   .contact-value a:hover { color: var(--gold); }
 
-  /* Newsletter */
   .newsletter-box {
     background: rgba(255,255,255,0.04);
     border: 1px solid rgba(196,162,101,0.2);
@@ -720,7 +690,6 @@
   }
 
   .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
-
   .form-field { display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 0.75rem; }
 
   .form-input {
@@ -747,14 +716,28 @@
   }
 
   /* ── FINAL CTA ── */
-  #cta { background: var(--off-white); text-align: center; padding: 7rem 2rem; }
+  #cta { background: #000; text-align: center; padding: 7rem 2rem; border-top: 1px solid rgba(196,162,101,0.1); }
+  #cta .section-headline { color: var(--white); }
+  #cta .section-sub { color: rgba(255,255,255,0.5); margin: 0 auto 2.5rem; }
+  #cta .section-eyebrow { color: var(--gold); }
+
+  .resource-kit-link {
+    display: block;
+    margin-top: 1.5rem;
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.35);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .resource-kit-link:hover { color: var(--gold); }
 
   /* ── FOOTER ── */
   footer {
     background: #000;
     padding: 2.5rem 2rem;
     text-align: center;
-    border-top: 1px solid rgba(196,162,101,0.15);
+    border-top: 1px solid rgba(196,162,101,0.1);
   }
 
   .footer-logo {
@@ -791,51 +774,93 @@
   <a href="#hero" class="nav-logo">MOA</a>
   <ul class="nav-links">
     <li><a href="#story">Our Story</a></li>
-    <li><a href="#tiers">The Program</a></li>
+    <li><a href="#isthisyou">Is This You</a></li>
     <li><a href="#how">How It Works</a></li>
     <li><a href="#faq">FAQ</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#cta" class="nav-cta">Apply Now</a></li>
+    <li><a href="REPLACE_WITH_APPLICATION_URL" class="nav-cta">Apply Now</a></li>
   </ul>
 </nav>
 
 <!-- HERO -->
 <section id="hero">
-  <video autoplay muted loop playsinline class="bg-photo" style="object-fit:cover;width:100%;height:100%;position:absolute;inset:0;opacity:0.4;"><source src="hero.mp4" type="video/mp4"></video>
+  <video autoplay muted loop playsinline>
+    <source src="hero.mp4" type="video/mp4">
+  </video>
   <div class="bg-glow"></div>
   <div class="hero-inner">
     <p class="hero-eyebrow">Merchant Oil Academy</p>
-    <h1 class="hero-headline">Real Allocations.<br><em>Real Deals. Real Access.</em></h1>
+    <h1 class="hero-headline">Trillion Dollar Markets Don't Let Just Anyone In.<br><em>We Found a Way. Now We're Bringing the Right People With Us.</em></h1>
     <div class="hero-rule"></div>
-    <p class="hero-sub">Most programs hand you a folder and wish you luck. We give you verified product from major refiners, a team behind you, and a real seat at the table in the Houston energy market.</p>
+    <p class="hero-sub">I spent years building real relationships with operators and refiners out of Houston. We now have direct access to verified product allocations that most brokers spend a career trying to find. If you are self-motivated, hungry, and ready to bet on yourself -- I want to show you what is possible.</p>
     <div class="btn-group">
-      <a href="REPLACE_WITH_TEACHABLE_TIER1_URL" class="btn-primary">Get the Resource Kit &mdash; $297</a>
-      <a href="REPLACE_WITH_APPLICATION_URL" class="btn-outline">Apply to Join the Team</a>
+      <a href="REPLACE_WITH_APPLICATION_URL" class="btn-primary">Apply to Join the Team</a>
     </div>
   </div>
 </section>
 
 <!-- OUR STORY -->
 <section id="story">
-  <div class="bg-photo"></div>
   <div class="container">
     <div class="story-inner">
-      <p class="section-eyebrow">Our Story</p>
-      <h2 class="section-headline">We Went Through One of These Programs.<br><em>Here Is What We Found.</em></h2>
+      <p class="section-eyebrow">How We Got Here</p>
+      <h2 class="section-headline">We Took the Hard Road So You Don't Have To.</h2>
 
       <div class="video-placeholder">
         <div class="play-btn"></div>
         <span class="video-label">Watch Our Story &nbsp;&middot;&nbsp; 5 min</span>
-        <!-- REPLACE this entire div with your video embed when ready -->
-        <!-- Example: <iframe width="100%" height="100%" src="https://www.youtube.com/embed/YOUR_VIDEO_ID" frameborder="0" allowfullscreen style="border-radius:8px;"></iframe> -->
+        <!-- REPLACE with your video embed when ready -->
       </div>
 
       <div class="story-copy">
-        <p>A few years back we enrolled in a commodity brokering program. It cost around $10,000 and promised a path into the energy market. What arrived was a collection of documents, a general overview of the industry, and an assumption that we would figure the rest out on our own. When we needed real support, it wasn't there.</p>
-        <p>A year later, we don't know a single person from that program who is still doing this. Not one. Not because the industry is impossible, but because there was never any real infrastructure behind the program. No verified product. No one actually working deals. No path to close.</p>
-        <p>We stayed. We spent the past year doing the hard work of building genuine relationships with operators, refiners, and suppliers in the Houston energy market. Learning how deals actually close. Earning trust with people who have real allocations to move.</p>
-        <p><strong>Now we are in a position to give you what we never had</strong> -- real mentorship, access to verified product allocations from major U.S. refiners, and a real path to your first closed deal.</p>
+        <p>A few years back I did what a lot of people in this space do -- I paid for a program that promised to teach me commodity brokering. What I got was a collection of documents and a wish of good luck.</p>
+        <p>When I finally found a real buyer and needed help, the response was simple: go find a seller yourself. That was their support.</p>
+        <p>A year later I don't know a single person from that program who is still doing this. Not one. Not because the industry is impossible -- but because there was never anything real behind the program. No verified product. No one actually in the market. No path to close.</p>
+        <p>I stayed. I made it my mission to build what that program never could. I spent the next year grinding through the Houston energy market, building genuine relationships with operators, refiners, and suppliers. Learning how deals actually close. Earning trust with people who have real allocations to move.</p>
+        <p><strong>What we have built is the program I wish existed when I started.</strong> Real product. Real mentorship. A real path to your first closed deal. And I am looking for the right people to bring into it.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- IS THIS YOU -->
+<section id="isthisyou">
+  <div class="container">
+    <div class="isthisyou-inner">
+      <p class="section-eyebrow">Who This Is For</p>
+      <h2 class="section-headline">This Is for the Person Who Bets on Themselves.</h2>
+      <p class="section-sub">We are not looking for everyone. We are looking for a specific kind of person.</p>
+
+      <ul class="qualifier-list">
+        <li>
+          <span class="qualifier-dot"></span>
+          <span><strong>You are self-motivated.</strong> You do not need someone to push you -- you push yourself.</span>
+        </li>
+        <li>
+          <span class="qualifier-dot"></span>
+          <span><strong>You come from sales, entrepreneurship, or any background</strong> where you have had to build something from scratch.</span>
+        </li>
+        <li>
+          <span class="qualifier-dot"></span>
+          <span><strong>You are hungry for an opportunity that matches your actual potential,</strong> not just your resume.</span>
+        </li>
+        <li>
+          <span class="qualifier-dot"></span>
+          <span><strong>You understand that real income takes real work,</strong> and you are not scared of either.</span>
+        </li>
+        <li>
+          <span class="qualifier-dot"></span>
+          <span><strong>You are a strong communicator</strong> who can build relationships and earn trust.</span>
+        </li>
+        <li>
+          <span class="qualifier-dot"></span>
+          <span><strong>You are ready to learn a new industry</strong> and go all in on it.</span>
+        </li>
+      </ul>
+
+      <p class="isthisyou-closing">"If you read that list and felt like we wrote it about you -- you are exactly who we are looking for."</p>
+
+      <a href="REPLACE_WITH_APPLICATION_URL" class="btn-primary">Apply to Join the Team</a>
     </div>
   </div>
 </section>
@@ -843,111 +868,54 @@
 <!-- WHAT MAKES THIS DIFFERENT -->
 <section id="different">
   <div class="container">
-    <p class="section-eyebrow">What Makes This Different</p>
-    <h2 class="section-headline">This Is Not Another Course.</h2>
+    <p class="section-eyebrow">Why MOA Is Different</p>
+    <h2 class="section-headline">This Is Not a Course. This Is an Open Door.</h2>
     <div class="pillars-grid">
       <div class="pillar">
         <div class="pillar-number">01</div>
         <h3 class="pillar-title">We Have Real Product</h3>
-        <p class="pillar-body">Every other program teaches you theory and then leaves you on your own. We have a direct relationship with a Houston-based operator who holds verified allocations from major refiners. When you find a buyer, you have somewhere real to take them.</p>
+        <p class="pillar-body">Most programs teach you theory and leave you on your own to find product. We have a direct relationship with a Houston-based operator holding verified allocations from major U.S. refiners. When you find a buyer, you have a real place to take them.</p>
       </div>
       <div class="pillar">
         <div class="pillar-number">02</div>
         <h3 class="pillar-title">You Are on the Team.</h3>
-        <p class="pillar-body">This is not a course you take in isolation. When you join the Accelerator, you become part of our team. You get business cards with your name on them. You get apparel. You get access to our deal flow. You are not learning from the sidelines. You are in the game.</p>
+        <p class="pillar-body">When you join the Accelerator you are not a student -- you are a team member. You get business cards with your name on them. You get apparel. You get access to our deal flow. You are not learning from the sidelines. You are in the game from day one.</p>
       </div>
       <div class="pillar">
         <div class="pillar-number">03</div>
-        <h3 class="pillar-title">We Are Honest About What This Takes</h3>
-        <p class="pillar-body">This is not a get-rich-quick opportunity. Building relationships in commodity markets takes time, patience, and persistence. We will be real with you about the timeline, the challenges, and the effort required. And we will be with you every step of the way.</p>
+        <h3 class="pillar-title">We Are Honest About What It Takes</h3>
+        <p class="pillar-body">This is not a get-rich-quick pitch. Building relationships in commodity markets takes time and persistence. We will be straight with you about the timeline and the work required. And we will be with you every step of the way until you close.</p>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- TWO TIERS -->
-<section id="tiers">
-  <div class="bg-photo"></div>
-  <div class="container">
-    <p class="section-eyebrow">Two Ways In</p>
-    <h2 class="section-headline">Choose Your Path.</h2>
-    <p class="section-sub">Start with the fundamentals or apply to join our team and work live deals alongside us.</p>
-    <div class="tiers-grid">
-
-      <!-- TIER 1 -->
-      <div class="tier-card">
-        <p class="tier-name">Tier 1</p>
-        <h3 class="tier-title">The Resource Kit</h3>
-        <p class="tier-desc">Everything you need to understand commodity brokering and decide if this is for you. Open enrollment, no application needed.</p>
-        <div class="tier-price">$297</div>
-        <p class="tier-note-sm">Instant access &nbsp;&middot;&nbsp; No application needed</p>
-        <div class="tier-divider"></div>
-        <ul class="tier-list">
-          <li>Complete course on commodity brokering fundamentals</li>
-          <li>Industry terminology glossary (ICPO, SCO, LOI, FOB, CIF, SBLC, and more)</li>
-          <li>Deal stages breakdown from prospecting to close</li>
-          <li>Template documents (SCO, LOI, KYC, advisory agreement, NCNDA)</li>
-          <li>LinkedIn optimization and outreach frameworks</li>
-          <li>Compliance and sanctions awareness guide</li>
-        </ul>
-        <a href="REPLACE_WITH_TEACHABLE_TIER1_URL" class="btn-primary" style="width:100%;text-align:center;display:block;">Get the Resource Kit</a>
-      </div>
-
-      <!-- TIER 2 -->
-      <div class="tier-card featured">
-        <div class="tier-badge">Full Team Access</div>
-        <p class="tier-name">Tier 2</p>
-        <h3 class="tier-title">The Accelerator</h3>
-        <p class="tier-desc">Full mentorship, verified supply access, and a real path to closing deals. This is not a course. It is a partnership.</p>
-        <div class="tier-apply-note">
-          <p><strong>Enrollment is by application only.</strong> We get on a call with you before anyone commits to anything. Pricing is discussed on that call.</p>
-        </div>
-        <div class="tier-divider"></div>
-        <ul class="tier-list">
-          <li>Everything in the Resource Kit</li>
-          <li>1-on-1 onboarding call before you reach out to anyone</li>
-          <li>Personalized prospecting strategy built around your network</li>
-          <li>Direct access to the team via WhatsApp and email</li>
-          <li>Access to verified product allocations from major U.S. refiners</li>
-          <li>Deal facilitation support from prospecting through close</li>
-          <li>Welcome package (business cards, apparel, welcome kit)</li>
-          <li>Tiered commission structure with a path to partnership earnings</li>
-        </ul>
-        <a href="REPLACE_WITH_APPLICATION_URL" class="btn-primary" style="width:100%;text-align:center;display:block;">Apply to Join the Team</a>
-        <p class="tier-note">Application required. Limited seats. We are selective.</p>
-      </div>
-
     </div>
   </div>
 </section>
 
 <!-- HOW IT WORKS -->
 <section id="how">
-  <div class="bg-photo"></div>
   <div class="container">
-    <p class="section-eyebrow">How It Works</p>
-    <h2 class="section-headline">Your Path from Day One to First Deal.</h2>
-    <p class="section-sub">For Accelerator members, here is what the journey looks like from acceptance to close.</p>
+    <p class="section-eyebrow">The Path</p>
+    <h2 class="section-headline">From Your First Conversation to Your First Closed Deal.</h2>
+    <p class="section-sub">Here is exactly what the journey looks like.</p>
     <div class="steps">
       <div class="step">
         <div class="step-num">01</div>
         <div>
           <h3 class="step-title">Apply and Get Accepted</h3>
-          <p class="step-body">We do not accept everyone. We get on a call with you first to understand your background, your goals, and whether this is the right fit. We are building a team, not selling seats.</p>
+          <p class="step-body">We get on a call first. We want to understand your background, your goals, and whether this is the right fit. We are building a team, not selling seats.</p>
         </div>
       </div>
       <div class="step">
         <div class="step-num">02</div>
         <div>
           <h3 class="step-title">Learn the Landscape</h3>
-          <p class="step-body">Work through our structured course material at your own pace. Industry terminology, deal stages, document types, compliance, and how our supply network operates. No fluff. Everything you need.</p>
+          <p class="step-body">Work through our structured course material at your own pace. Industry terminology, deal stages, document types, compliance, and how our supply network operates. Everything you need, nothing you don't.</p>
         </div>
       </div>
       <div class="step">
         <div class="step-num">03</div>
         <div>
           <h3 class="step-title">Build Your Strategy</h3>
-          <p class="step-body">Before you reach out to a single person, you get a 1-on-1 call with one of our founders. We learn about your network, your experience, and your strengths. Then we build a personalized prospecting approach designed specifically for you.</p>
+          <p class="step-body">Before you reach out to a single person, we get on a 1-on-1 call with you. We learn about your network and your strengths. Then we build a prospecting approach designed specifically for you.</p>
         </div>
       </div>
       <div class="step">
@@ -961,14 +929,14 @@
         <div class="step-num">05</div>
         <div>
           <h3 class="step-title">Bring a Buyer. We Help You Close.</h3>
-          <p class="step-body">When you identify a qualified buyer, our team steps in. We connect you to our supply network, help facilitate the documentation, and support the deal through to close. This is where every other program falls apart. This is where we deliver.</p>
+          <p class="step-body">When you identify a qualified buyer our team steps in. We connect you to our supply network, help facilitate the documentation, and support the deal all the way through to close. This is where every other program falls apart. This is where we deliver.</p>
         </div>
       </div>
       <div class="step">
         <div class="step-num">06</div>
         <div>
           <h3 class="step-title">Get Paid. Keep Going.</h3>
-          <p class="step-body">Close your first deal and earn real income. Your enrollment investment is structured to pay for itself. Then you keep building, with a clear path to higher earnings as you grow.</p>
+          <p class="step-body">Close your first deal and earn real income. Your enrollment investment is structured to pay for itself. Then you keep building with a clear path to higher earnings as you grow.</p>
         </div>
       </div>
     </div>
@@ -979,15 +947,15 @@
 <section id="faq">
   <div class="container">
     <p class="section-eyebrow">Frequently Asked Questions</p>
-    <h2 class="section-headline">Questions We Get Asked.</h2>
+    <h2 class="section-headline">Let's Be Straight With Each Other.</h2>
     <div class="faq-list">
 
       <div class="faq-item">
         <button class="faq-question" onclick="toggleFaq(this)">
-          Do I need experience in commodities or energy?
+          Do I need experience in oil or commodities?
           <span class="faq-icon">+</span>
         </button>
-        <div class="faq-answer"><p class="faq-answer-inner">No. Many of the best brokers come from outside the industry. What matters is that you are willing to learn, put in the work, and build relationships. We teach you everything else.</p></div>
+        <div class="faq-answer"><p class="faq-answer-inner">No. Some of the best brokers come from completely outside this industry. What matters is that you are a strong communicator, self-motivated, and willing to learn. We teach you everything else.</p></div>
       </div>
 
       <div class="faq-item">
@@ -995,7 +963,7 @@
           How long until I close my first deal?
           <span class="faq-icon">+</span>
         </button>
-        <div class="faq-answer"><p class="faq-answer-inner">We are going to be straight with you: there is no guaranteed timeline. Commodity deals can take months to develop. What we can tell you is that you will have real product to offer, real mentorship, and a real support system. It took us nearly a year of building before we were in a position to close, and we are here to shorten that timeline for you significantly.</p></div>
+        <div class="faq-answer"><p class="faq-answer-inner">There is no guaranteed timeline and we will never pretend there is. Commodity deals take time to develop. What we can tell you is that you will have real product, real mentorship, and a team that does not disappear when things get hard. It took us nearly a year of building before we were in a position to close. We are here to shorten that timeline significantly for you.</p></div>
       </div>
 
       <div class="faq-item">
@@ -1003,23 +971,23 @@
           What products do you have access to?
           <span class="faq-icon">+</span>
         </button>
-        <div class="faq-answer"><p class="faq-answer-inner">Our supply network includes ULSD, EN590, Jet A-1, D6 fuel oil, and other refined petroleum products through verified allocations from major U.S. refiners. We are continually expanding our product access and also have a growing network in critical minerals including Bauxite, Copper, and Antimony Ore.</p></div>
+        <div class="faq-answer"><p class="faq-answer-inner">Our supply network includes ULSD, EN590, Jet A-1, D6 fuel oil, and other refined petroleum products through verified allocations from major U.S. refiners out of Houston. We are also expanding into critical minerals including Bauxite, Copper, and Antimony Ore.</p></div>
       </div>
 
       <div class="faq-item">
         <button class="faq-question" onclick="toggleFaq(this)">
-          Why do I need to apply for Tier 2?
+          Why do I have to apply?
           <span class="faq-icon">+</span>
         </button>
-        <div class="faq-answer"><p class="faq-answer-inner">Because we are selective about who joins our team. We want people who align with our values, who are coachable, and who are going to put in the effort. This is not a program where we take your money and disappear. We are investing our time in you, and we need to know you are serious before either of us commits.</p></div>
+        <div class="faq-answer"><p class="faq-answer-inner">Because we are selective. We are investing our time in you, which means we need to know you are serious before either of us commits. The application is a conversation, not a barrier.</p></div>
       </div>
 
       <div class="faq-item">
         <button class="faq-question" onclick="toggleFaq(this)">
-          Is this a scam? How do I know this is real?
+          Is this a scam?
           <span class="faq-icon">+</span>
         </button>
-        <div class="faq-answer"><p class="faq-answer-inner">We understand the skepticism. This space is full of programs that overpromise and underdeliver. We know because we paid for one. Here is what makes us different: we have real product behind us, we get on a call with you before you spend a dollar on Tier 2, and we are transparent about what this actually takes. We have no reason to take your money and run. Our success depends entirely on yours.</p></div>
+        <div class="faq-answer"><p class="faq-answer-inner">We get why you are asking and we respect it. This space is full of programs that overpromise and underdeliver. We know because we paid for one. Here is what makes us different -- we have real product, we get on a call with you before you spend a dollar on Tier 2, and our success depends entirely on yours. We have no reason to take your money and disappear.</p></div>
       </div>
 
       <div class="faq-item">
@@ -1027,15 +995,15 @@
           How much time do I need to commit?
           <span class="faq-icon">+</span>
         </button>
-        <div class="faq-answer"><p class="faq-answer-inner">This can be done alongside a full-time job, but it is not passive. Expect to spend 5 to 10 hours per week on learning, outreach, and relationship building, especially in the first few months. The rest is on your schedule.</p></div>
+        <div class="faq-answer"><p class="faq-answer-inner">This can be done alongside a full-time job but it is not passive. Expect 5 to 10 hours a week on learning, outreach, and relationship building especially in the first few months.</p></div>
       </div>
 
       <div class="faq-item">
         <button class="faq-question" onclick="toggleFaq(this)">
-          What if Tier 1 is all I want?
+          What if I just want the Resource Kit?
           <span class="faq-icon">+</span>
         </button>
-        <div class="faq-answer"><p class="faq-answer-inner">That is completely fine. The Resource Kit stands on its own as a thorough introduction to commodity brokering. You will learn more from it than most expensive programs offer. If you decide later that you want to go deeper, Tier 2 will be here.</p></div>
+        <div class="faq-answer"><p class="faq-answer-inner">That is completely fine. The Resource Kit is a comprehensive introduction to commodity brokering that stands on its own. You will learn more from it than most expensive programs offer. If you decide later you want to go deeper, we will be here.</p></div>
       </div>
 
     </div>
@@ -1044,13 +1012,11 @@
 
 <!-- CONTACT + NEWSLETTER -->
 <section id="contact">
-  <div class="bg-photo"></div>
   <div class="container">
     <p class="section-eyebrow">Get in Touch</p>
     <h2 class="section-headline">We Are Here to Talk.</h2>
     <div class="contact-grid">
 
-      <!-- LEFT: Contact Info -->
       <div>
         <p class="section-sub">Have a question before committing to anything? Reach out directly. We read every message and respond within 24 hours.</p>
         <div class="contact-details">
@@ -1060,7 +1026,7 @@
             </div>
             <div>
               <p class="contact-label">Email</p>
-              <p class="contact-value"><a href="/cdn-cgi/l/email-protection#d8b1b6beb798b5b7b9b7b1b4f6bbb7b5"><span class="__cf_email__" data-cfemail="dcb5b2bab39cb1b3bdb3b5b0f2bfb3b1">[email&#160;protected]</span></a></p>
+              <p class="contact-value"><a href="mailto:info@moaoil.com">info@moaoil.com</a></p>
             </div>
           </div>
           <div class="contact-item">
@@ -1087,7 +1053,6 @@
         </div>
       </div>
 
-      <!-- RIGHT: Newsletter -->
       <div class="newsletter-box">
         <h3 class="newsletter-title">Stay in the Know.</h3>
         <p class="newsletter-sub">We send a newsletter covering how the commodity brokering world actually works, what real deals look like in practice, and what we are seeing in the market. No pitches. No spam. Just useful information for people serious about this industry.</p>
@@ -1110,14 +1075,14 @@
 
 <!-- FINAL CTA -->
 <section id="cta">
-  <div class="container" style="text-align:center;">
-    <p class="section-eyebrow">Ready to Start?</p>
-    <h2 class="section-headline">Build Something Real</h2>
-    <p class="section-sub" style="margin: 0 auto 2.5rem;">Whether you want to learn the fundamentals or join our team and start working live deals, we are here.</p>
+  <div class="container">
+    <p class="section-eyebrow">The Door Is Open</p>
+    <h2 class="section-headline">The Only Question Is Whether You Are Ready to Walk Through It.</h2>
+    <p class="section-sub">If you are self-motivated, hungry, and ready to bet on yourself in one of the biggest markets in the world -- let's talk. The worst thing that happens is we have a good conversation.</p>
     <div class="btn-group">
-      <a href="REPLACE_WITH_TEACHABLE_TIER1_URL" class="btn-primary">Get the Resource Kit &mdash; $297</a>
-      <a href="REPLACE_WITH_APPLICATION_URL" class="btn-outline" style="border-color:rgba(0,0,0,0.3);color:#0A0A0A;">Apply to Join the Team</a>
+      <a href="REPLACE_WITH_APPLICATION_URL" class="btn-primary">Apply to Join the Team</a>
     </div>
+    <a href="REPLACE_WITH_TEACHABLE_TIER1_URL" class="resource-kit-link">Not ready to apply yet? Start with the Resource Kit for $297.</a>
   </div>
 </section>
 
@@ -1127,7 +1092,7 @@
   <p>&copy; 2026 Merchant Oil Academy &nbsp;&middot;&nbsp; moaoil.com</p>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 function toggleFaq(btn) {
   var item = btn.closest('.faq-item');
   var isOpen = item.classList.contains('open');
@@ -1146,4 +1111,14 @@ function handleNewsletterSignup() {
       btn.textContent = 'Subscribe to the Newsletter';
       btn.style.background = '';
     }, 2500);
-    ret
+    return;
+  }
+  // TODO: Replace with your newsletter integration (Mailchimp, ConvertKit, etc.)
+  btn.textContent = 'You are on the list.';
+  btn.style.background = '#3d6b4f';
+  btn.disabled = true;
+}
+</script>
+
+</body>
+</html>
