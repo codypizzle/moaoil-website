@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Apply to Join the Team | Merchant Oil Academy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --gold: #C4A265;
+    --gold-light: #D4B87A;
+    --gold-dark: #A88845;
+    --red-light: #B91C1C;
+    --white: #FFFFFF;
+    --off-white: #F5F5F5;
+    --text-body: #1A1A1A;
+    --text-muted: #5A5A5A;
+    --border: #D8D8D8;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text-body);
+    background: #000;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(0,0,0,0.97);
+    backdrop-filter: blur(8px);
+    padding: 0 2rem;
+    height: 68px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(196,162,101,0.2);
+  }
+
+  .nav-logo {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--gold);
+    letter-spacing: 0.04em;
+    text-decoration: none;
+  }
+
+  .nav-back {
+    color: rgba(255,255,255,0.5);
+    text-decoration: none;
+    font-size: 0.85rem;
+    letter-spacing: 0.03em;
+    transition: color 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .nav-back:hover { color: var(--gold); }
+
+  /* ── PAGE HEADER ── */
+  .page-header {
+    padding: 10rem 2rem 5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    background: #000;
+    border-bottom: 1px solid rgba(196,162,101,0.1);
+  }
+
+  .page-header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 70% 80% at 50% 50%, rgba(196,162,101,0.05) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .header-inner { position: relative; z-index: 1; max-width: 680px; margin: 0 auto; }
+
+  .page-eyebrow {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+
+  .page-headline {
+    font-family: 'EB Garamond', serif;
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    font-weight: 600;
+    color: var(--white);
+    line-height: 1.1;
+    margin-bottom: 1.25rem;
+  }
+
+  .page-headline em {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  .page-sub {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.8;
+    max-width: 560px;
+    margin: 0 auto;
+  }
+
+  /* ── FORM SECTION ── */
+  .form-section {
+    padding: 5rem 2rem 7rem;
+    background: #000;
+  }
+
+  .form-wrap {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  /* ── PROGRESS BAR ── */
+  .progress-wrap {
+    margin-bottom: 3rem;
+  }
+
+  .progress-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.3);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+  }
+
+  .progress-track {
+    height: 2px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  .progress-fill {
+    height: 100%;
+    background: var(--gold);
+    border-radius: 2px;
+    transition: width 0.4s ease;
+    width: 0%;
+  }
+
+  /* ── FORM STEPS ── */
+  .form-step { display: none; }
+  .form-step.active { display: block; }
+
+  .step-heading {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+  }
+
+  .step-sub {
+    font-size: 0.92rem;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+  }
+
+  /* ── FIELD GROUPS ── */
+  .field-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .field-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .field-label {
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.45);
+    margin-bottom: 0.4rem;
+    display: block;
+  }
+
+  .field-input {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 4px;
+    padding: 0.85rem 1rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    color: var(--white);
+    outline: none;
+    transition: border-color 0.2s;
+    width: 100%;
+  }
+
+  .field-input::placeholder { color: rgba(255,255,255,0.2); }
+  .field-input:focus { border-color: rgba(196,162,101,0.6); }
+
+  .field-textarea {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 4px;
+    padding: 0.85rem 1rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    color: var(--white);
+    outline: none;
+    transition: border-color 0.2s;
+    width: 100%;
+    resize: vertical;
+    min-height: 130px;
+    line-height: 1.7;
+  }
+
+  .field-textarea::placeholder { color: rgba(255,255,255,0.2); }
+  .field-textarea:focus { border-color: rgba(196,162,101,0.6); }
+
+  /* ── RADIO OPTIONS ── */
+  .question-label {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 1.25rem;
+    line-height: 1.4;
+    display: block;
+  }
+
+  .options-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .option-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: border-color 0.2s, background 0.2s;
+    position: relative;
+  }
+
+  .option-item:hover {
+    border-color: rgba(196,162,101,0.4);
+    background: rgba(196,162,101,0.04);
+  }
+
+  .option-item.selected {
+    border-color: var(--gold);
+    background: rgba(196,162,101,0.08);
+  }
+
+  .option-item input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .option-circle {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(255,255,255,0.25);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: border-color 0.2s;
+  }
+
+  .option-item.selected .option-circle {
+    border-color: var(--gold);
+  }
+
+  .option-circle::after {
+    content: '';
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--gold);
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+
+  .option-item.selected .option-circle::after { opacity: 1; }
+
+  .option-text {
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.4;
+    transition: color 0.2s;
+  }
+
+  .option-item.selected .option-text { color: var(--white); }
+
+  /* ── NAV BUTTONS ── */
+  .form-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.07);
+  }
+
+  .btn-next {
+    background: var(--gold);
+    color: #000;
+    padding: 0.9rem 2.5rem;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+    margin-left: auto;
+  }
+
+  .btn-next:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+  .btn-back {
+    background: none;
+    border: none;
+    color: rgba(255,255,255,0.35);
+    font-size: 0.88rem;
+    cursor: pointer;
+    transition: color 0.2s;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 0.03em;
+  }
+
+  .btn-back:hover { color: var(--gold); }
+
+  .btn-submit {
+    background: var(--gold);
+    color: #000;
+    padding: 1rem 3rem;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+    margin-left: auto;
+  }
+
+  .btn-submit:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+  /* ── ERROR MESSAGE ── */
+  .error-msg {
+    font-size: 0.82rem;
+    color: #ef4444;
+    margin-top: 0.5rem;
+    display: none;
+  }
+
+  .error-msg.visible { display: block; }
+
+  /* ── SUCCESS SCREEN ── */
+  #success-screen {
+    display: none;
+    text-align: center;
+    padding: 4rem 2rem;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .success-icon {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    border: 2px solid var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 2rem;
+  }
+
+  .success-icon svg { width: 32px; height: 32px; }
+
+  .success-headline {
+    font-family: 'EB Garamond', serif;
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+
+  .success-sub {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
+  }
+
+  .btn-calendly {
+    background: var(--gold);
+    color: #000;
+    padding: 1rem 2.5rem;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.2s, transform 0.15s;
+    margin-bottom: 1rem;
+  }
+
+  .btn-calendly:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+  .success-note {
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.25);
+    margin-top: 1.25rem;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #000;
+    padding: 2rem 2rem;
+    text-align: center;
+    border-top: 1px solid rgba(196,162,101,0.1);
+  }
+
+  .footer-logo {
+    font-family: 'EB Garamond', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--gold);
+    letter-spacing: 0.06em;
+    margin-bottom: 0.4rem;
+  }
+
+  footer p { font-size: 0.75rem; color: rgba(255,255,255,0.2); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 640px) {
+    .field-row { grid-template-columns: 1fr; }
+    nav { padding: 0 1.25rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">MOA</a>
+  <a href="index.html" class="nav-back">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+    Back to Home
+  </a>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="header-inner">
+    <p class="page-eyebrow">Merchant Oil Academy</p>
+    <h1 class="page-headline">Tell Us About<br><em>Yourself.</em></h1>
+    <p class="page-sub">This takes about 3 minutes. Be honest -- we are not looking for a perfect resume. We are looking for the right person.</p>
+  </div>
+</div>
+
+<!-- FORM SECTION -->
+<div class="form-section">
+  <div class="form-wrap">
+
+    <!-- PROGRESS -->
+    <div class="progress-wrap">
+      <div class="progress-label">
+        <span id="progress-text">Step 1 of 4</span>
+        <span id="progress-pct">0%</span>
+      </div>
+      <div class="progress-track">
+        <div class="progress-fill" id="progress-fill"></div>
+      </div>
+    </div>
+
+    <!-- FORM -->
+    <form id="app-form" action="https://formspree.io/f/mojkzwej" method="POST">
+
+      <!-- STEP 1: Personal Info -->
+      <div class="form-step active" id="step-1">
+        <h2 class="step-heading">First, let's get to know you.</h2>
+        <p class="step-sub">We will use this to follow up after you submit.</p>
+        <div class="field-group">
+          <div class="field-row">
+            <div>
+              <label class="field-label" for="first-name">First Name</label>
+              <input type="text" id="first-name" name="first_name" class="field-input" placeholder="Cody" autocomplete="given-name" />
+            </div>
+            <div>
+              <label class="field-label" for="last-name">Last Name</label>
+              <input type="text" id="last-name" name="last_name" class="field-input" placeholder="Smith" autocomplete="family-name" />
+            </div>
+          </div>
+          <div>
+            <label class="field-label" for="email">Email Address</label>
+            <input type="email" id="email" name="email" class="field-input" placeholder="you@email.com" autocomplete="email" />
+          </div>
+          <div>
+            <label class="field-label" for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" class="field-input" placeholder="(555) 000-0000" autocomplete="tel" />
+          </div>
+        </div>
+        <p class="error-msg" id="error-1">Please fill in all fields before continuing.</p>
+        <div class="form-nav">
+          <button type="button" class="btn-next" onclick="nextStep(1)">Continue &rarr;</button>
+        </div>
+      </div>
+
+      <!-- STEP 2: Questions 1-3 -->
+      <div class="form-step" id="step-2">
+        <h2 class="step-heading">Your background.</h2>
+        <p class="step-sub">No right or wrong answers. Just be straight with us.</p>
+
+        <span class="question-label">What is your current or most recent professional background?</span>
+        <div class="options-list" id="q1">
+          <label class="option-item" onclick="selectOption(this, 'q1')">
+            <input type="radio" name="background" value="Sales or Business Development" />
+            <span class="option-circle"></span>
+            <span class="option-text">Sales or Business Development</span>
+          </label>
+          <label class="option-item" onclick="selectOption(this, 'q1')">
+            <input type="radio" name="background" value="Entrepreneurship or Self-Employed" />
+            <span class="option-circle"></span>
+            <span class="option-text">Entrepreneurship or Self-Employed</span>
+          </label>
+          <label class="option-item" onclick="selectOption(this, 'q1')">
+            <input type="radio" name="background" value="Finance or Trading" />
+            <span class="option-circle"></span>
+            <span class="option-text">Finance or Trading</span>
+          </label>
+          <label class="option-item" onclick="selectOption(this, 'q1')">
+            <input type="radio" name="background" value="Other Professional Background" />
+            <span class="option-circle"></span>
+            <span class="option-text">Other Professional Background</span>
+          </label>
+        </div>
+
+        <span class="question-label">What best describes what you are looking for right now?</span>
+        <div class="options-list" id="q2">
+          <label class="option-item" onclick="selectOption(this, 'q2')">
+            <input type="radio" name="motivation" value="A new income stream alongside my current work" />
+            <span class="option-circle"></span>
+            <span class="option-text">A new income stream alongside my current work</span>
+          </label>
+          <label class="option-item" onclick="selectOption(this, 'q2')">
+            <input type="radio" name="motivation" value="A full transition into a new industry" />
+            <span class="option-circle"></span>
+            <span class="option-text">A full transition into a new industry</span>
+          </label>
+          <label class="option-item" onclick="selectOption(this, 'q2')">
+            <input type="radio" name="motivation" value="I want to build something of my own" />
+            <span class="option-circle"></span>
+            <span class="option-text">I want to build something of my own</span>
+          </label>
+          <label class="option-item" onclick="selectOption(this, 'q2')">
+            <input type="radio" name="motivation" value="I am exploring and learning what is out there" />
+            <span class="option-circle"></span>
+            <span class="option-text">I am exploring and learning what is out there</span>
+          </label>
+        </div>
+
+        <span class="question-label">How would you describe your experience in sales or relationship building?</span>
+        <div class="options-list" id="q3">
+          <label class="option-item" onclick="selectOption(this, 'q3')">
+            <input type="radio" name="sales_experience" value="Strong sales background, comfortable closing" />
+            <span class="option-circle"></span>
+            <span class="option-text">I have a strong sales background and am comfortable closing</span>
+          </label>
+          <label class="option-item" onclick="selectOption(this, 'q3')">
+            <input type="radio" name="sales_experience" value="Some experience, still developing" />
+            <span class="option-circle"></span>
+            <span class="option-text">I have some experience but am still developing</span>
+          </label>
+          <label class="option-item" onclick="selectOption(this, 'q3')">
+            <input type="radio" name="sales_experience" value="Newer to sales but strong communicator" />
+            <span class="option-circle"></span>
+            <span class="option-text">I am newer to sales but am a strong communicator</span>
+          </label>
+          <label class="option-item" onclick="selectOption(this, 'q3')">
+            <input type="radio" name="sales_experience" value="No formal sales experience" />
+            <span class="option-circle"></span>
+            <span class="option-text">I have no formal sales experience</span>
+          </label>
+        </div>
+
+        <p class="error-msg" id="error-2">Please answer all questions before continuing.</p>
+        <div class="form-nav">
+          <button type="button" class="btn-back" onclick="prevStep(2)">&larr; Back</button>
+          <button type="button" class="btn-next" onclick="nextStep(2)">Continue &rarr;</button>
+        </div>
+      </div>
+
+      <!-- STEP 3: Questions 4-6 -->
+      <div class="form-step" id="step-3">
+        <h2 class="step-heading">Commitment and readiness.</h2>
+        <p class="step-sub">We want to make sure this is the right time for you.</p>
+
+        <span class="question-label">Can you realistically commit 5 to 10 hours per week to learning and prospecting?</span>
+        <div class="options-list" id="q4">
+          <label class="option-item" onclick="selectOption(this, 'q4')">
+            <input type="radio" name="time_commitment" value="Yes, I can commit fully" />
+            <span class="option-circle"></span>
+            <span class="option-text">Yes, I can commit fully</span>
+          </label>
+          <label class="option-item" onclick="selectOption(this, 'q4')">
+            <input type="radio" name="time_commitment" value="Yes, but closer to 5 hours to start" />
+            <span class="option-circle"></span>
+            <span class="option-text">Yes, but closer to 5 hours to start</span>
+          </label>
+          <label class="option-item" onclick="selectOption(this, 'q4')">
+            <input type="radio" name="time_commitment" value="Not sure yet" />
+            <span class="option-circle"></span>
+            <span class="option-text">I am not sure yet</span>
+          </label>
+          <label class="option-item" onclick="selectOption(this, 'q4')">
+            <input type="radio" name="time_commitment" value="Schedule is too limited right now" />
+            <span class="option-circle"></span>
+            <span class="option-text">No, my schedule is too limited right now</span>
+          </label>
+        </div>
+
+        <span class="question-label">Are you open to making a financial investment to gain access to our team, training, and supply network?</span>
+        <div class="options-list" id="q5">
+          <label class="option-item" onclick="selectOption(this, 'q5')">
+            <input type="radio" name="investment_mindset" value="Yes, ready to invest" />
+            <span class="option-circle"></span>
+            <span class="option-text">Yes, I understand this is a business and I am ready to invest in it</span>
+          </label>
+          <label class="option-item" onclick="selectOption(this, 'q5')">
+            <input type="radio" name="investment_mindset" value="Open depending on what is involved" />
+            <span class="option-circle"></span>
+            <span class="option-text">I am open to it depending on what is involved</span>
+          </label>
+          <label class="option-item" onclick="selectOption(this, 'q5')">
+            <input type="radio" name="investment_mindset" value="Would need to know more first" />
+            <span class="option-circle"></span>
+            <span class="option-text">I would need to know more before deciding</span>
+          </label>
+          <label class="option-item" onclick="selectOption(this, 'q5')">
+            <input type="radio" name="investment_mindset" value="Not in a position to invest right now" />
+            <span class="option-circle"></span>
+            <span class="option-text">I am not in a position to invest right now</span>
+          </label>
+        </div>
+
+        <span class="question-label">When are you looking to get started?</span>
+        <div class="options-list" id="q6">
+          <label class="option-item" onclick="selectOption(this, 'q6')">
+            <input type="radio" name="timeline" value="Immediately, ready now" />
+            <span class="option-circle"></span>
+            <span class="option-text">Immediately, I am ready now</span>
+          </label>
+          <label class="option-item" onclick="selectOption(this, 'q6')">
+            <input type="radio" name="timeline" value="Within the next 30 days" />
+            <span class="option-circle"></span>
+            <span class="option-text">Within the next 30 days</span>
+          </label>
+          <label class="option-item" onclick="selectOption(this, 'q6')">
+            <input type="radio" name="timeline" value="Within the next 90 days" />
+            <span class="option-circle"></span>
+            <span class="option-text">Within the next 90 days</span>
+          </label>
+          <label class="option-item" onclick="selectOption(this, 'q6')">
+            <input type="radio" name="timeline" value="Just exploring for now" />
+            <span class="option-circle"></span>
+            <span class="option-text">I am just exploring for now</span>
+          </label>
+        </div>
+
+        <p class="error-msg" id="error-3">Please answer all questions before continuing.</p>
+        <div class="form-nav">
+          <button type="button" class="btn-back" onclick="prevStep(3)">&larr; Back</button>
+          <button type="button" class="btn-next" onclick="nextStep(3)">Continue &rarr;</button>
+        </div>
+      </div>
+
+      <!-- STEP 4: Final thoughts -->
+      <div class="form-step" id="step-4">
+        <h2 class="step-heading">Last question.</h2>
+        <p class="step-sub">This is your chance to tell us anything you want us to know before we connect.</p>
+
+        <span class="question-label">Is there anything else you want us to know about you?</span>
+        <textarea
+          name="additional_info"
+          class="field-textarea"
+          placeholder="Tell us a little about yourself, your goals, or why you think this is the right opportunity for you. There are no wrong answers here."
+        ></textarea>
+
+        <p class="error-msg" id="error-4"></p>
+        <div class="form-nav">
+          <button type="button" class="btn-back" onclick="prevStep(4)">&larr; Back</button>
+          <button type="submit" class="btn-submit" id="submit-btn">Submit My Application &rarr;</button>
+        </div>
+      </div>
+
+    </form>
+
+    <!-- SUCCESS SCREEN -->
+    <div id="success-screen">
+      <div class="success-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#C4A265" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+      </div>
+      <h2 class="success-headline">Application Received.</h2>
+      <p class="success-sub">Thank you for taking the time to apply. We have received everything and will be in touch within 24 hours to discuss next steps.<br><br>In the meantime, go ahead and book a time on our calendar so we are ready to connect when we reach out.</p>
+      <a href="REPLACE_WITH_CALENDLY_URL" class="btn-calendly" target="_blank">Book Your Call &rarr;</a>
+      <p class="success-note">A confirmation has been sent to your email address.</p>
+    </div>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p class="footer-logo">Merchant Oil Academy</p>
+  <p>&copy; 2026 Merchant Oil Academy &nbsp;&middot;&nbsp; moaoil.com</p>
+</footer>
+
+<script>
+  var currentStep = 1;
+  var totalSteps = 4;
+
+  function updateProgress(step) {
+    var pct = Math.round(((step - 1) / totalSteps) * 100);
+    document.getElementById('progress-fill').style.width = pct + '%';
+    document.getElementById('progress-text').textContent = 'Step ' + step + ' of ' + totalSteps;
+    document.getElementById('progress-pct').textContent = pct + '%';
+  }
+
+  function selectOption(el, groupId) {
+    var group = document.getElementById(groupId);
+    group.querySelectorAll('.option-item').forEach(function(item) {
+      item.classList.remove('selected');
+    });
+    el.classList.add('selected');
+    el.querySelector('input[type="radio"]').checked = true;
+  }
+
+  function nextStep(step) {
+    var valid = true;
+
+    if (step === 1) {
+      var first = document.getElementById('first-name').value.trim();
+      var last = document.getElementById('last-name').value.trim();
+      var email = document.getElementById('email').value.trim();
+      var phone = document.getElementById('phone').value.trim();
+      if (!first || !last || !email || !phone || !email.includes('@')) {
+        document.getElementById('error-1').classList.add('visible');
+        valid = false;
+      } else {
+        document.getElementById('error-1').classList.remove('visible');
+      }
+    }
+
+    if (step === 2) {
+      var q1 = document.querySelector('input[name="background"]:checked');
+      var q2 = document.querySelector('input[name="motivation"]:checked');
+      var q3 = document.querySelector('input[name="sales_experience"]:checked');
+      if (!q1 || !q2 || !q3) {
+        document.getElementById('error-2').classList.add('visible');
+        valid = false;
+      } else {
+        document.getElementById('error-2').classList.remove('visible');
+      }
+    }
+
+    if (step === 3) {
+      var q4 = document.querySelector('input[name="time_commitment"]:checked');
+      var q5 = document.querySelector('input[name="investment_mindset"]:checked');
+      var q6 = document.querySelector('input[name="timeline"]:checked');
+      if (!q4 || !q5 || !q6) {
+        document.getElementById('error-3').classList.add('visible');
+        valid = false;
+      } else {
+        document.getElementById('error-3').classList.remove('visible');
+      }
+    }
+
+    if (!valid) return;
+
+    document.getElementById('step-' + step).classList.remove('active');
+    currentStep = step + 1;
+    document.getElementById('step-' + currentStep).classList.add('active');
+    updateProgress(currentStep);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function prevStep(step) {
+    document.getElementById('step-' + step).classList.remove('active');
+    currentStep = step - 1;
+    document.getElementById('step-' + currentStep).classList.add('active');
+    updateProgress(currentStep);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  // Handle form submission
+  var form = document.getElementById('app-form');
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    var btn = document.getElementById('submit-btn');
+    btn.textContent = 'Submitting...';
+    btn.disabled = true;
+
+    var data = new FormData(form);
+
+    fetch(form.action, {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    }).then(function(response) {
+      if (response.ok) {
+        form.style.display = 'none';
+        document.getElementById('progress-wrap') && (document.querySelector('.progress-wrap').style.display = 'none');
+        document.getElementById('success-screen').style.display = 'block';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        btn.textContent = 'Something went wrong. Please try again.';
+        btn.style.background = '#888';
+        btn.disabled = false;
+      }
+    }).catch(function() {
+      btn.textContent = 'Something went wrong. Please try again.';
+      btn.style.background = '#888';
+      btn.disabled = false;
+    });
+  });
+
+  updateProgress(1);
+</script>
+
+</body>
+</html>
