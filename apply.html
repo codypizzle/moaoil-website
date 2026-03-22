@@ -516,40 +516,10 @@
     </div>
 
     <!-- FORM -->
-    <form id="app-form" action="https://formspree.io/f/mojkzwej" method="POST">
+    <form id="app-form" action="https://formspree.io/f/REPLACE_WITH_FORMSPREE_ID" method="POST">
 
-      <!-- STEP 1: Personal Info -->
+      <!-- STEP 1: Questions 1-3 -->
       <div class="form-step active" id="step-1">
-        <h2 class="step-heading">First, let's get to know you.</h2>
-        <p class="step-sub">We will use this to follow up after you submit.</p>
-        <div class="field-group">
-          <div class="field-row">
-            <div>
-              <label class="field-label" for="first-name">First Name</label>
-              <input type="text" id="first-name" name="first_name" class="field-input" placeholder="Cody" autocomplete="given-name" />
-            </div>
-            <div>
-              <label class="field-label" for="last-name">Last Name</label>
-              <input type="text" id="last-name" name="last_name" class="field-input" placeholder="Smith" autocomplete="family-name" />
-            </div>
-          </div>
-          <div>
-            <label class="field-label" for="email">Email Address</label>
-            <input type="email" id="email" name="email" class="field-input" placeholder="you@email.com" autocomplete="email" />
-          </div>
-          <div>
-            <label class="field-label" for="phone">Phone Number</label>
-            <input type="tel" id="phone" name="phone" class="field-input" placeholder="(555) 000-0000" autocomplete="tel" />
-          </div>
-        </div>
-        <p class="error-msg" id="error-1">Please fill in all fields before continuing.</p>
-        <div class="form-nav">
-          <button type="button" class="btn-next" onclick="nextStep(1)">Continue &rarr;</button>
-        </div>
-      </div>
-
-      <!-- STEP 2: Questions 1-3 -->
-      <div class="form-step" id="step-2">
         <h2 class="step-heading">Your background.</h2>
         <p class="step-sub">No right or wrong answers. Just be straight with us.</p>
 
@@ -625,15 +595,14 @@
           </label>
         </div>
 
-        <p class="error-msg" id="error-2">Please answer all questions before continuing.</p>
+        <p class="error-msg" id="error-1">Please answer all questions before continuing.</p>
         <div class="form-nav">
-          <button type="button" class="btn-back" onclick="prevStep(2)">&larr; Back</button>
-          <button type="button" class="btn-next" onclick="nextStep(2)">Continue &rarr;</button>
+          <button type="button" class="btn-next" onclick="nextStep(1)">Continue &rarr;</button>
         </div>
       </div>
 
-      <!-- STEP 3: Questions 4-6 -->
-      <div class="form-step" id="step-3">
+      <!-- STEP 2: Questions 4-6 -->
+      <div class="form-step" id="step-2">
         <h2 class="step-heading">Commitment and readiness.</h2>
         <p class="step-sub">We want to make sure this is the right time for you.</p>
 
@@ -709,15 +678,15 @@
           </label>
         </div>
 
-        <p class="error-msg" id="error-3">Please answer all questions before continuing.</p>
+        <p class="error-msg" id="error-2">Please answer all questions before continuing.</p>
         <div class="form-nav">
-          <button type="button" class="btn-back" onclick="prevStep(3)">&larr; Back</button>
-          <button type="button" class="btn-next" onclick="nextStep(3)">Continue &rarr;</button>
+          <button type="button" class="btn-back" onclick="prevStep(2)">&larr; Back</button>
+          <button type="button" class="btn-next" onclick="nextStep(2)">Continue &rarr;</button>
         </div>
       </div>
 
-      <!-- STEP 4: Final thoughts -->
-      <div class="form-step" id="step-4">
+      <!-- STEP 3: Final thoughts -->
+      <div class="form-step" id="step-3">
         <h2 class="step-heading">Last question.</h2>
         <p class="step-sub">This is your chance to tell us anything you want us to know before we connect.</p>
 
@@ -728,7 +697,38 @@
           placeholder="Tell us a little about yourself, your goals, or why you think this is the right opportunity for you. There are no wrong answers here."
         ></textarea>
 
-        <p class="error-msg" id="error-4"></p>
+        <p class="error-msg" id="error-3"></p>
+        <div class="form-nav">
+          <button type="button" class="btn-back" onclick="prevStep(3)">&larr; Back</button>
+          <button type="button" class="btn-next" onclick="nextStep(3)">Continue &rarr;</button>
+        </div>
+      </div>
+
+      <!-- STEP 4: Personal Info -->
+      <div class="form-step" id="step-4">
+        <h2 class="step-heading">Almost done. How do we reach you?</h2>
+        <p class="step-sub">We will use this to follow up after you submit.</p>
+        <div class="field-group">
+          <div class="field-row">
+            <div>
+              <label class="field-label" for="first-name">First Name</label>
+              <input type="text" id="first-name" name="first_name" class="field-input" placeholder="Cody" autocomplete="given-name" />
+            </div>
+            <div>
+              <label class="field-label" for="last-name">Last Name</label>
+              <input type="text" id="last-name" name="last_name" class="field-input" placeholder="Smith" autocomplete="family-name" />
+            </div>
+          </div>
+          <div>
+            <label class="field-label" for="email">Email Address</label>
+            <input type="email" id="email" name="email" class="field-input" placeholder="you@email.com" autocomplete="email" />
+          </div>
+          <div>
+            <label class="field-label" for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" class="field-input" placeholder="(555) 000-0000" autocomplete="tel" />
+          </div>
+        </div>
+        <p class="error-msg" id="error-4">Please fill in all fields before submitting.</p>
         <div class="form-nav">
           <button type="button" class="btn-back" onclick="prevStep(4)">&larr; Back</button>
           <button type="submit" class="btn-submit" id="submit-btn">Submit My Application &rarr;</button>
@@ -783,11 +783,10 @@
     var valid = true;
 
     if (step === 1) {
-      var first = document.getElementById('first-name').value.trim();
-      var last = document.getElementById('last-name').value.trim();
-      var email = document.getElementById('email').value.trim();
-      var phone = document.getElementById('phone').value.trim();
-      if (!first || !last || !email || !phone || !email.includes('@')) {
+      var q1 = document.querySelector('input[name="background"]:checked');
+      var q2 = document.querySelector('input[name="motivation"]:checked');
+      var q3 = document.querySelector('input[name="sales_experience"]:checked');
+      if (!q1 || !q2 || !q3) {
         document.getElementById('error-1').classList.add('visible');
         valid = false;
       } else {
@@ -796,10 +795,10 @@
     }
 
     if (step === 2) {
-      var q1 = document.querySelector('input[name="background"]:checked');
-      var q2 = document.querySelector('input[name="motivation"]:checked');
-      var q3 = document.querySelector('input[name="sales_experience"]:checked');
-      if (!q1 || !q2 || !q3) {
+      var q4 = document.querySelector('input[name="time_commitment"]:checked');
+      var q5 = document.querySelector('input[name="investment_mindset"]:checked');
+      var q6 = document.querySelector('input[name="timeline"]:checked');
+      if (!q4 || !q5 || !q6) {
         document.getElementById('error-2').classList.add('visible');
         valid = false;
       } else {
@@ -808,15 +807,7 @@
     }
 
     if (step === 3) {
-      var q4 = document.querySelector('input[name="time_commitment"]:checked');
-      var q5 = document.querySelector('input[name="investment_mindset"]:checked');
-      var q6 = document.querySelector('input[name="timeline"]:checked');
-      if (!q4 || !q5 || !q6) {
-        document.getElementById('error-3').classList.add('visible');
-        valid = false;
-      } else {
-        document.getElementById('error-3').classList.remove('visible');
-      }
+      document.getElementById('error-3').classList.remove('visible');
     }
 
     if (!valid) return;
@@ -841,6 +832,16 @@
   form.addEventListener('submit', function(e) {
     e.preventDefault();
     var btn = document.getElementById('submit-btn');
+    var first = document.getElementById('first-name').value.trim();
+    var last = document.getElementById('last-name').value.trim();
+    var email = document.getElementById('email').value.trim();
+    var phone = document.getElementById('phone').value.trim();
+    if (!first || !last || !email || !phone || !email.includes('@')) {
+      e.preventDefault();
+      document.getElementById('error-4').classList.add('visible');
+      return;
+    }
+    document.getElementById('error-4').classList.remove('visible');
     btn.textContent = 'Submitting...';
     btn.disabled = true;
 
