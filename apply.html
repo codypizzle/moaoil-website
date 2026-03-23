@@ -554,12 +554,7 @@
   <body>
     <!-- NAV -->
     <nav>
-      <a href="index.html" class="nav-logo"
-        ><img
-          src="logo.png"
-          alt="Merchant Oil Academy"
-          style="height: 42px; width: auto; display: block"
-      /></a>
+      <a href="index.html" class="nav-logo">MOA</a>
       <a href="index.html" class="nav-back">
         <svg
           width="14"
@@ -1074,19 +1069,36 @@
 
       function updateProgress(step) {
         var pct = Math.round(((step - 1) / totalSteps) * 100);
-        document.getElementById('progress-fill').style.width = pct + '%';
-        document.getElementById('progress-text').textContent = 'Step ' + step + ' of ' + totalSteps;
-        document.getElementById('progress-pct').textContent = pct + '%';
+        document.getElementById("progress-fill").style.width = pct + "%";
+        document.getElementById("progress-text").textContent =
+          "Step " + step + " of " + totalSteps;
+        document.getElementById("progress-pct").textContent = pct + "%";
       }
 
       function selectOption(el, groupId) {
         var group = document.getElementById(groupId);
-        group.querySelectorAll('.option-item').forEach(function(item) {
-          item.classList.remove('selected');
+        group.querySelectorAll(".option-item").forEach(function (item) {
+          item.classList.remove("selected");
         });
-        el.classList.add('selected');
-        el.querySelector('input[type="radio"]').checked = true;
+        el.classList.add("selected");
+        var radio = el.querySelector('input[type="radio"]');
+        if (radio) radio.checked = true;
       }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll(".option-item").forEach(function (item) {
+          item.addEventListener("click", function (e) {
+            var groupEl = this.closest(".options-list");
+            if (!groupEl) return;
+            groupEl.querySelectorAll(".option-item").forEach(function (i) {
+              i.classList.remove("selected");
+            });
+            this.classList.add("selected");
+            var radio = this.querySelector('input[type="radio"]');
+            if (radio) radio.checked = true;
+          });
+        });
+      });
 
       function nextStep(step) {
         var valid = true;
@@ -1094,89 +1106,98 @@
         if (step === 1) {
           var q1 = document.querySelector('input[name="background"]:checked');
           var q2 = document.querySelector('input[name="motivation"]:checked');
-          var q3 = document.querySelector('input[name="sales_experience"]:checked');
+          var q3 = document.querySelector(
+            'input[name="sales_experience"]:checked',
+          );
           if (!q1 || !q2 || !q3) {
-            document.getElementById('error-1').classList.add('visible');
+            document.getElementById("error-1").classList.add("visible");
             valid = false;
           } else {
-            document.getElementById('error-1').classList.remove('visible');
+            document.getElementById("error-1").classList.remove("visible");
           }
         }
 
         if (step === 2) {
-          var q4 = document.querySelector('input[name="time_commitment"]:checked');
-          var q5 = document.querySelector('input[name="investment_mindset"]:checked');
+          var q4 = document.querySelector(
+            'input[name="time_commitment"]:checked',
+          );
+          var q5 = document.querySelector(
+            'input[name="investment_mindset"]:checked',
+          );
           var q6 = document.querySelector('input[name="timeline"]:checked');
           if (!q4 || !q5 || !q6) {
-            document.getElementById('error-2').classList.add('visible');
+            document.getElementById("error-2").classList.add("visible");
             valid = false;
           } else {
-            document.getElementById('error-2').classList.remove('visible');
+            document.getElementById("error-2").classList.remove("visible");
           }
         }
 
         if (step === 3) {
-          document.getElementById('error-3').classList.remove('visible');
+          document.getElementById("error-3").classList.remove("visible");
         }
 
         if (!valid) return;
 
-        document.getElementById('step-' + step).classList.remove('active');
+        document.getElementById("step-" + step).classList.remove("active");
         currentStep = step + 1;
-        document.getElementById('step-' + currentStep).classList.add('active');
+        document.getElementById("step-" + currentStep).classList.add("active");
         updateProgress(currentStep);
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        window.scrollTo({ top: 0, behavior: "smooth" });
       }
 
       function prevStep(step) {
-        document.getElementById('step-' + step).classList.remove('active');
+        document.getElementById("step-" + step).classList.remove("active");
         currentStep = step - 1;
-        document.getElementById('step-' + currentStep).classList.add('active');
+        document.getElementById("step-" + currentStep).classList.add("active");
         updateProgress(currentStep);
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        window.scrollTo({ top: 0, behavior: "smooth" });
       }
 
       // Handle form submission
-      var form = document.getElementById('app-form');
-      form.addEventListener('submit', function(e) {
+      var form = document.getElementById("app-form");
+      form.addEventListener("submit", function (e) {
         e.preventDefault();
-        var btn = document.getElementById('submit-btn');
-        var first = document.getElementById('first-name').value.trim();
-        var last = document.getElementById('last-name').value.trim();
-        var email = document.getElementById('email').value.trim();
-        var phone = document.getElementById('phone').value.trim();
-        if (!first || !last || !email || !phone || !email.includes('@')) {
+        var btn = document.getElementById("submit-btn");
+        var first = document.getElementById("first-name").value.trim();
+        var last = document.getElementById("last-name").value.trim();
+        var email = document.getElementById("email").value.trim();
+        var phone = document.getElementById("phone").value.trim();
+        if (!first || !last || !email || !phone || !email.includes("@")) {
           e.preventDefault();
-          document.getElementById('error-4').classList.add('visible');
+          document.getElementById("error-4").classList.add("visible");
           return;
         }
-        document.getElementById('error-4').classList.remove('visible');
-        btn.textContent = 'Submitting...';
+        document.getElementById("error-4").classList.remove("visible");
+        btn.textContent = "Submitting...";
         btn.disabled = true;
 
         var data = new FormData(form);
 
-        fetch('https://formspree.io/f/mojkzwej', {
-          method: 'POST',
+        fetch(form.action, {
+          method: "POST",
           body: data,
-          headers: { 'Accept': 'application/json' }
+          headers: { Accept: "application/json" },
         })
-        }).then(function(response) {
-          if (response.ok) {
-            form.style.display = 'none';
-            document.getElementById('progress-wrap') && (document.querySelector('.progress-wrap').style.display = 'none');
-            document.getElementById('success-screen').style.display = 'block';
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-          } else {
-            btn.textContent = 'Something went wrong. Please try again.';
-            btn.style.background = '#888';
+          .then(function (response) {
+            if (response.ok) {
+              form.style.display = "none";
+              document.getElementById("progress-wrap") &&
+                (document.querySelector(".progress-wrap").style.display =
+                  "none");
+              document.getElementById("success-screen").style.display = "block";
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            } else {
+              btn.textContent = "Something went wrong. Please try again.";
+              btn.style.background = "#888";
+              btn.disabled = false;
+            }
+          })
+          .catch(function () {
+            btn.textContent = "Something went wrong. Please try again.";
+            btn.style.background = "#888";
             btn.disabled = false;
-          }
-        }).catch(function() {
-          btn.textContent = 'Something went wrong. Please try again.';
-          btn.style.background = '#888';
-          btn.disabled = false;
-        });
+          });
       });
 
       updateProgress(1);
