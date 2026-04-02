@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free Live Webinar | Merchant Oil Academy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --gold: #C9A84C;
+      --gold-light: #E8C97A;
+      --gold-dim: #8B6914;
+      --red: #8B1A1A;
+      --red-bright: #C0392B;
+      --black: #080808;
+      --black-mid: #111111;
+      --black-card: #161616;
+      --white: #F5F0E8;
+      --white-dim: #A89F8C;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--black);
+      color: var(--white);
+      font-family: 'Barlow', sans-serif;
+      font-weight: 300;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* NOISE TEXTURE OVERLAY */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.4;
+    }
+
+    /* NAV */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 24px 48px;
+      border-bottom: 1px solid rgba(201,168,76,0.15);
+      position: relative;
+      z-index: 10;
+    }
+
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: var(--gold);
+      text-transform: uppercase;
+    }
+
+    .nav-logo span {
+      color: var(--white);
+      font-weight: 400;
+    }
+
+    .nav-badge {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid var(--gold-dim);
+      padding: 6px 14px;
+    }
+
+    /* URGENCY BAR */
+    .urgency-bar {
+      background: var(--red);
+      text-align: center;
+      padding: 10px 20px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 13px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--white);
+      position: relative;
+      z-index: 10;
+      animation: pulse-bar 3s ease-in-out infinite;
+    }
+
+    @keyframes pulse-bar {
+      0%, 100% { background: var(--red); }
+      50% { background: var(--red-bright); }
+    }
+
+    .urgency-bar strong { color: var(--gold-light); }
+
+    /* HERO */
+    .hero {
+      position: relative;
+      z-index: 1;
+      padding: 80px 48px 60px;
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .hero-left { position: relative; }
+
+    .eyebrow {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 12px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .eyebrow::before {
+      content: '';
+      display: block;
+      width: 32px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(36px, 4vw, 56px);
+      font-weight: 900;
+      line-height: 1.1;
+      color: var(--white);
+      margin-bottom: 28px;
+    }
+
+    h1 em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .hero-subhead {
+      font-size: 17px;
+      font-weight: 400;
+      color: var(--white-dim);
+      line-height: 1.7;
+      margin-bottom: 40px;
+      max-width: 540px;
+    }
+
+    .hero-subhead strong {
+      color: var(--white);
+      font-weight: 600;
+    }
+
+    /* EVENT DETAILS */
+    .event-details {
+      display: flex;
+      gap: 32px;
+      margin-bottom: 48px;
+      flex-wrap: wrap;
+    }
+
+    .event-detail {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .event-detail-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold-dim);
+    }
+
+    .event-detail-value {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: 0.05em;
+    }
+
+    .divider-v {
+      width: 1px;
+      background: rgba(201,168,76,0.2);
+      align-self: stretch;
+    }
+
+    /* WHAT YOU LEARN */
+    .learns {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-bottom: 48px;
+    }
+
+    .learn-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      font-size: 15px;
+      color: var(--white-dim);
+      line-height: 1.5;
+    }
+
+    .learn-item strong { color: var(--white); font-weight: 500; }
+
+    .learn-check {
+      width: 20px;
+      height: 20px;
+      border: 1px solid var(--gold-dim);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .learn-check::after {
+      content: '';
+      width: 8px;
+      height: 4px;
+      border-left: 1.5px solid var(--gold);
+      border-bottom: 1.5px solid var(--gold);
+      transform: rotate(-45deg) translateY(-1px);
+    }
+
+    /* CREDENTIAL BAR */
+    .credential-bar {
+      border-left: 3px solid var(--gold);
+      padding: 18px 24px;
+      background: rgba(201,168,76,0.04);
+      margin-bottom: 48px;
+    }
+
+    .credential-bar p {
+      font-size: 14px;
+      color: var(--white-dim);
+      line-height: 1.6;
+    }
+
+    .credential-bar strong {
+      color: var(--gold-light);
+      font-weight: 500;
+    }
+
+    /* REGISTRATION CARD */
+    .reg-card {
+      background: var(--black-card);
+      border: 1px solid rgba(201,168,76,0.25);
+      padding: 40px 36px;
+      position: sticky;
+      top: 24px;
+      animation: fadeInRight 0.8s ease both;
+      animation-delay: 0.2s;
+    }
+
+    @keyframes fadeInRight {
+      from { opacity: 0; transform: translateX(20px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    .reg-card-tag {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 6px;
+    }
+
+    .reg-card h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
+
+    .reg-card-sub {
+      font-size: 13px;
+      color: var(--white-dim);
+      margin-bottom: 28px;
+      line-height: 1.5;
+    }
+
+    .reg-divider {
+      height: 1px;
+      background: rgba(201,168,76,0.15);
+      margin-bottom: 28px;
+    }
+
+    /* FORM STYLES */
+    .wj-form-wrapper input[type="text"],
+    .wj-form-wrapper input[type="email"] {
+      width: 100%;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(201,168,76,0.2);
+      color: var(--white);
+      padding: 14px 16px;
+      font-family: 'Barlow', sans-serif;
+      font-size: 14px;
+      outline: none;
+      margin-bottom: 12px;
+      transition: border-color 0.2s;
+    }
+
+    .wj-form-wrapper input:focus {
+      border-color: var(--gold);
+    }
+
+    .wj-form-wrapper input::placeholder {
+      color: rgba(245,240,232,0.3);
+    }
+
+    .cta-btn {
+      display: block;
+      width: 100%;
+      background: var(--gold);
+      color: var(--black);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      text-align: center;
+      padding: 18px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      margin-top: 4px;
+      transition: background 0.2s, transform 0.1s;
+    }
+
+    .cta-btn:hover {
+      background: var(--gold-light);
+      transform: translateY(-1px);
+    }
+
+    .cta-btn:active { transform: translateY(0); }
+
+    .reg-note {
+      text-align: center;
+      font-size: 11px;
+      color: var(--white-dim);
+      margin-top: 14px;
+      letter-spacing: 0.05em;
+    }
+
+    .spots-left {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 20px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 12px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--red-bright);
+    }
+
+    .spots-dot {
+      width: 6px;
+      height: 6px;
+      background: var(--red-bright);
+      border-radius: 50%;
+      animation: blink 1.5s ease-in-out infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.2; }
+    }
+
+    /* SOCIAL PROOF */
+    .social-proof {
+      margin-top: 28px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(201,168,76,0.1);
+    }
+
+    .proof-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold-dim);
+      margin-bottom: 12px;
+    }
+
+    .proof-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .proof-dot {
+      width: 4px;
+      height: 4px;
+      background: var(--gold);
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-top: 8px;
+    }
+
+    .proof-item p {
+      font-size: 12px;
+      color: var(--white-dim);
+      line-height: 1.5;
+    }
+
+    /* ABOUT SECTION */
+    .about-section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 80px 48px;
+      position: relative;
+      z-index: 1;
+      border-top: 1px solid rgba(201,168,76,0.1);
+    }
+
+    .section-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 48px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: rgba(201,168,76,0.15);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 2px;
+    }
+
+    .about-card {
+      background: var(--black-card);
+      padding: 36px 32px;
+      border: 1px solid rgba(201,168,76,0.08);
+      transition: border-color 0.3s;
+    }
+
+    .about-card:hover { border-color: rgba(201,168,76,0.3); }
+
+    .about-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 48px;
+      font-weight: 900;
+      color: var(--gold);
+      opacity: 0.3;
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+
+    .about-card h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+
+    .about-card p {
+      font-size: 14px;
+      color: var(--white-dim);
+      line-height: 1.7;
+    }
+
+    /* BOTTOM CTA */
+    .bottom-cta {
+      background: var(--black-mid);
+      border-top: 1px solid rgba(201,168,76,0.15);
+      border-bottom: 1px solid rgba(201,168,76,0.15);
+      padding: 80px 48px;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .bottom-cta h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(28px, 3vw, 44px);
+      font-weight: 900;
+      color: var(--white);
+      margin-bottom: 16px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .bottom-cta h2 em {
+      color: var(--gold);
+      font-style: italic;
+    }
+
+    .bottom-cta p {
+      font-size: 16px;
+      color: var(--white-dim);
+      margin-bottom: 40px;
+    }
+
+    .cta-btn-lg {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--black);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      padding: 20px 48px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.1s;
+    }
+
+    .cta-btn-lg:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 32px 48px;
+      text-align: center;
+      font-size: 12px;
+      color: rgba(168,159,140,0.4);
+      letter-spacing: 0.1em;
+      position: relative;
+      z-index: 1;
+    }
+
+    footer a { color: var(--gold-dim); text-decoration: none; }
+
+    /* GOLD LINE DECORATOR */
+    .gold-line {
+      width: 48px;
+      height: 2px;
+      background: var(--gold);
+      margin-bottom: 32px;
+    }
+
+    /* ANIMATIONS */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-left { animation: fadeInUp 0.7s ease both; }
+    .eyebrow { animation: fadeInUp 0.7s ease both; animation-delay: 0.1s; }
+    h1 { animation: fadeInUp 0.7s ease both; animation-delay: 0.2s; }
+    .hero-subhead { animation: fadeInUp 0.7s ease both; animation-delay: 0.3s; }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      nav { padding: 20px 24px; }
+      .hero { grid-template-columns: 1fr; gap: 48px; padding: 48px 24px; }
+      .reg-card { position: static; }
+      .about-grid { grid-template-columns: 1fr; }
+      .about-section { padding: 60px 24px; }
+      .bottom-cta { padding: 60px 24px; }
+      footer { padding: 24px; }
+      .event-details { gap: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- URGENCY BAR -->
+  <div class="urgency-bar">
+    <strong>Free Live Webinar</strong> &nbsp;|&nbsp; April 15, 2026 at 6:00 PM Pacific / 9:00 PM Eastern &nbsp;|&nbsp; <strong>Limited Seats Available</strong>
+  </div>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo">MOA <span>| Merchant Oil Academy</span></div>
+    <div class="nav-badge">Free Live Training</div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-left">
+      <div class="eyebrow">Free Live Webinar &mdash; April 15, 2026</div>
+
+      <h1>How to Close Your First Oil Deal with <em>No Experience</em> and No Capital</h1>
+
+      <p class="hero-subhead">
+        We broke into petroleum brokering from the outside -- no industry background, no refinery contacts, no roadmap. Then we found the right partner: <strong>15 years in the Houston oil market, direct allocations from major U.S. refiners, and fulfilled government fuel contracts through the DLA.</strong> We're going live on April 15th to show you exactly how we did it -- and how you can do the same, faster.
+      </p>
+
+      <div class="event-details">
+        <div class="event-detail">
+          <span class="event-detail-label">Date</span>
+          <span class="event-detail-value">April 15, 2026</span>
+        </div>
+        <div class="divider-v"></div>
+        <div class="event-detail">
+          <span class="event-detail-label">Time</span>
+          <span class="event-detail-value">6:00 PM PST</span>
+        </div>
+        <div class="divider-v"></div>
+        <div class="event-detail">
+          <span class="event-detail-label">Cost</span>
+          <span class="event-detail-value">Free</span>
+        </div>
+        <div class="divider-v"></div>
+        <div class="event-detail">
+          <span class="event-detail-label">Format</span>
+          <span class="event-detail-value">Live Online</span>
+        </div>
+      </div>
+
+      <div class="credential-bar">
+        <p>We came from outside this industry. No oil background, no refinery relationships, no idea how deals actually got done. What changed everything was connecting with a partner who had spent <strong>15 years building real supply access</strong> -- direct allocations from major U.S. refiners and a track record of fulfilled government fuel contracts. On April 15th, we're sharing everything we learned so you don't have to figure it out the hard way.</p>
+      </div>
+
+      <div class="gold-line"></div>
+
+      <div class="learns">
+        <div class="learn-item">
+          <div class="learn-check"></div>
+          <p><strong>How we broke in from zero</strong> -- no experience, no contacts, no industry background -- and what actually moved the needle</p>
+        </div>
+        <div class="learn-item">
+          <div class="learn-check"></div>
+          <p><strong>The supply side access</strong> that most outsiders never find -- direct allocations from major U.S. refiners and what it means for your deals</p>
+        </div>
+        <div class="learn-item">
+          <div class="learn-check"></div>
+          <p><strong>How petroleum brokers get paid</strong> on multi-million dollar transactions without ever owning a barrel of product</p>
+        </div>
+        <div class="learn-item">
+          <div class="learn-check"></div>
+          <p><strong>The exact deal structure</strong> behind real government fuel contracts -- and how the brokering side of it works</p>
+        </div>
+        <div class="learn-item">
+          <div class="learn-check"></div>
+          <p><strong>How to compress your timeline</strong> -- the shortcut we wish we had when we were starting out</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- REGISTRATION CARD -->
+    <div class="reg-card">
+      <div class="reg-card-tag">Save Your Seat</div>
+      <h2>Reserve Your Free Spot</h2>
+      <p class="reg-card-sub">Seats are limited. Enter your info below to secure your place at the live training.</p>
+      <div class="reg-divider"></div>
+
+      <div id="wj-registration" class="wj-form-wrapper">
+        <div class="wj-embed-wrapper" data-webinar-hash="8wg5pnsy">
+          <script src="https://event.webinarjam.com/register/8wg5pnsy/embed-form?formButtonText=Save+My+Free+Spot&formAccentColor=%23C9A84C&formAccentOpacity=1&formBgColor=%23161616&formBgOpacity=1"></script>
+        </div>
+      </div>
+
+      <p class="reg-note">100% Free. No credit card required.<br>A confirmation will be sent to your email.</p>
+
+      <div class="spots-left">
+        <div class="spots-dot"></div>
+        Filling up fast &mdash; secure your seat now
+      </div>
+
+      <div class="social-proof">
+        <div class="proof-label">What This Webinar Covers</div>
+        <div class="proof-item">
+          <div class="proof-dot"></div>
+          <p>Our story -- how we broke in from the outside with no oil background</p>
+        </div>
+        <div class="proof-item">
+          <div class="proof-dot"></div>
+          <p>15 years of supply-side access -- direct allocations from major U.S. refiners</p>
+        </div>
+        <div class="proof-item">
+          <div class="proof-dot"></div>
+          <p>How to compress your timeline and skip the mistakes we made</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section class="about-section">
+    <div class="section-label">Why This Webinar Is Different</div>
+
+    <div class="about-grid">
+      <div class="about-card">
+        <div class="about-number">15</div>
+        <h3>Years of Supply Access</h3>
+        <p>Our supply-side partner spent 15 years building real relationships with major U.S. refiners -- direct product allocations and a track record of fulfilled government fuel contracts. That access is what makes this different.</p>
+      </div>
+      <div class="about-card">
+        <div class="about-number">$0</div>
+        <h3>To Attend</h3>
+        <p>This is a free live training. No pitch trap, no watered-down preview content. We're showing you the real path in -- because we walked it ourselves and want to save you the time it took us.</p>
+      </div>
+      <div class="about-card">
+        <div class="about-number">1x</div>
+        <h3>Live Session Only</h3>
+        <p>There is no replay. This is a live conversation, not a pre-recorded course. If you want access to what we're sharing on April 15th, you need to be in the room.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOTTOM CTA -->
+  <section class="bottom-cta">
+    <h2>You're not stuck. You're just in the <em>wrong industry.</em></h2>
+    <p>We figured that out the hard way. Come let us save you the time.</p>
+    <a href="#wj-registration" class="cta-btn-lg">Reserve My Free Seat</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2026 Merchant Oil Academy &nbsp;|&nbsp; <a href="https://moaoil.com">moaoil.com</a> &nbsp;|&nbsp; All rights reserved.</p>
+    <p style="margin-top:8px;">This webinar is for educational purposes. Results in petroleum brokering vary based on experience, effort, and market conditions.</p>
+  </footer>
+
+  <script>
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+
+    // Intersection observer for scroll animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.about-card').forEach((el, i) => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(20px)';
+      el.style.transition = `opacity 0.6s ease ${i * 0.15}s, transform 0.6s ease ${i * 0.15}s`;
+      observer.observe(el);
+    });
+  </script>
+
+</body>
+</html>
