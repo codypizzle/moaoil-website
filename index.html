@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -6,10 +6,19 @@
     <title>Merchant Oil Academy</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
 
     <style>
-      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
 
       :root {
         --gold: #c4a265;
@@ -24,7 +33,9 @@
         --border: #d8d8d8;
       }
 
-      html { scroll-behavior: smooth; }
+      html {
+        scroll-behavior: smooth;
+      }
 
       body {
         font-family: "Inter", sans-serif;
@@ -37,7 +48,9 @@
       /* ── NAV ── */
       nav {
         position: fixed;
-        top: 0; left: 0; right: 0;
+        top: 0;
+        left: 0;
+        right: 0;
         z-index: 100;
         background: rgba(0, 0, 0, 0.97);
         backdrop-filter: blur(8px);
@@ -74,7 +87,9 @@
         transition: color 0.2s;
       }
 
-      .nav-links a:hover { color: var(--gold); }
+      .nav-links a:hover {
+        color: var(--gold);
+      }
 
       .nav-cta {
         background: var(--gold) !important;
@@ -87,7 +102,9 @@
         text-transform: uppercase;
       }
 
-      .nav-cta:hover { background: var(--gold-light) !important; }
+      .nav-cta:hover {
+        background: var(--gold-light) !important;
+      }
 
       .mobile-cta {
         display: none;
@@ -103,12 +120,19 @@
       }
 
       @media (max-width: 640px) {
-        .mobile-cta { display: block; }
+        .mobile-cta {
+          display: block;
+        }
       }
 
       /* ── SHARED ── */
-      section { padding: 6rem 2rem; }
-      .container { max-width: 1060px; margin: 0 auto; }
+      section {
+        padding: 6rem 2rem;
+      }
+      .container {
+        max-width: 1060px;
+        margin: 0 auto;
+      }
 
       .section-eyebrow {
         font-size: 0.72rem;
@@ -145,13 +169,18 @@
         letter-spacing: 0.05em;
         text-transform: uppercase;
         text-decoration: none;
-        transition: background 0.2s, transform 0.15s;
+        transition:
+          background 0.2s,
+          transform 0.15s;
         display: inline-block;
         border: none;
         cursor: pointer;
       }
 
-      .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
+      .btn-primary:hover {
+        background: var(--gold-light);
+        transform: translateY(-1px);
+      }
 
       .btn-outline-gold {
         border: 1px solid rgba(196, 162, 101, 0.5);
@@ -163,11 +192,16 @@
         letter-spacing: 0.05em;
         text-transform: uppercase;
         text-decoration: none;
-        transition: border-color 0.2s, background 0.2s;
+        transition:
+          border-color 0.2s,
+          background 0.2s;
         display: inline-block;
       }
 
-      .btn-outline-gold:hover { border-color: var(--gold); background: rgba(196, 162, 101, 0.08); }
+      .btn-outline-gold:hover {
+        border-color: var(--gold);
+        background: rgba(196, 162, 101, 0.08);
+      }
 
       .btn-group {
         display: flex;
@@ -202,11 +236,19 @@
       #hero .bg-glow {
         position: absolute;
         inset: 0;
-        background: radial-gradient(ellipse 80% 60% at 50% 40%, rgba(196, 162, 101, 0.06) 0%, transparent 70%);
+        background: radial-gradient(
+          ellipse 80% 60% at 50% 40%,
+          rgba(196, 162, 101, 0.06) 0%,
+          transparent 70%
+        );
         pointer-events: none;
       }
 
-      .hero-inner { position: relative; z-index: 2; max-width: 900px; }
+      .hero-inner {
+        position: relative;
+        z-index: 2;
+        max-width: 900px;
+      }
 
       .hero-eyebrow {
         font-size: 0.75rem;
@@ -226,7 +268,10 @@
         margin-bottom: 1rem;
       }
 
-      .hero-headline em { font-style: italic; color: var(--gold); }
+      .hero-headline em {
+        font-style: italic;
+        color: var(--gold);
+      }
 
       .hero-rule {
         width: 56px;
@@ -244,11 +289,19 @@
       }
 
       /* ── OUR STORY ── */
-      #story { background: #000; }
+      #story {
+        background: #000;
+      }
 
-      #story .section-headline { color: var(--white); }
+      #story .section-headline {
+        color: var(--white);
+      }
 
-      .story-inner { max-width: 780px; margin: 0 auto; text-align: center; }
+      .story-inner {
+        max-width: 780px;
+        margin: 0 auto;
+        text-align: center;
+      }
 
       .story-copy {
         font-size: 1.03rem;
@@ -258,14 +311,25 @@
         text-align: left;
       }
 
-      .story-copy p { margin-bottom: 1.35rem; }
-      .story-copy p:last-child { margin-bottom: 0; }
-      .story-copy strong { color: var(--gold); font-weight: 500; }
+      .story-copy p {
+        margin-bottom: 1.35rem;
+      }
+      .story-copy p:last-child {
+        margin-bottom: 0;
+      }
+      .story-copy strong {
+        color: var(--gold);
+        font-weight: 500;
+      }
 
       /* ── IS THIS YOU ── */
-      #isthisyou { background: var(--off-white); }
+      #isthisyou {
+        background: var(--off-white);
+      }
 
-      .isthisyou-inner { max-width: 780px; }
+      .isthisyou-inner {
+        max-width: 780px;
+      }
 
       .isthisyou-closing {
         font-family: "EB Garamond", serif;
@@ -303,7 +367,9 @@
       }
 
       /* ── WHAT MAKES THIS DIFFERENT ── */
-      #different { background: var(--white); }
+      #different {
+        background: var(--white);
+      }
 
       .pillars-grid {
         display: grid;
@@ -312,7 +378,10 @@
         margin-top: 3.5rem;
       }
 
-      .pillar { border-top: 2px solid var(--red-light); padding-top: 1.75rem; }
+      .pillar {
+        border-top: 2px solid var(--red-light);
+        padding-top: 1.75rem;
+      }
 
       .pillar-number {
         font-family: "EB Garamond", serif;
@@ -332,10 +401,16 @@
         line-height: 1.25;
       }
 
-      .pillar-body { font-size: 0.95rem; color: var(--text-muted); line-height: 1.8; }
+      .pillar-body {
+        font-size: 0.95rem;
+        color: var(--text-muted);
+        line-height: 1.8;
+      }
 
       /* ── TWO TIERS ── */
-      #tiers { background: var(--warm-gray); }
+      #tiers {
+        background: var(--warm-gray);
+      }
 
       .tiers-grid {
         display: grid;
@@ -345,13 +420,23 @@
         align-items: start;
       }
 
-      .tier-card { background: var(--white); border-radius: 8px; padding: 2.5rem 2rem; border: 1px solid var(--border); }
+      .tier-card {
+        background: var(--white);
+        border-radius: 8px;
+        padding: 2.5rem 2rem;
+        border: 1px solid var(--border);
+      }
 
-      .tier-card.featured { background: #0a0a0a; border-color: rgba(196, 162, 101, 0.3); position: relative; }
+      .tier-card.featured {
+        background: #0a0a0a;
+        border-color: rgba(196, 162, 101, 0.3);
+        position: relative;
+      }
 
       .tier-badge {
         position: absolute;
-        top: -1px; left: 50%;
+        top: -1px;
+        left: 50%;
         transform: translateX(-50%);
         background: var(--gold);
         color: #000;
@@ -364,29 +449,75 @@
         white-space: nowrap;
       }
 
-      .tier-name { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; }
+      .tier-name {
+        font-size: 0.72rem;
+        font-weight: 500;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 0.5rem;
+      }
 
-      .tier-title { font-family: "EB Garamond", serif; font-size: 1.8rem; font-weight: 600; color: #0a0a0a; margin-bottom: 0.75rem; }
+      .tier-title {
+        font-family: "EB Garamond", serif;
+        font-size: 1.8rem;
+        font-weight: 600;
+        color: #0a0a0a;
+        margin-bottom: 0.75rem;
+      }
 
-      .tier-card.featured .tier-title { color: var(--white); }
+      .tier-card.featured .tier-title {
+        color: var(--white);
+      }
 
-      .tier-price { font-family: "EB Garamond", serif; font-size: 2.6rem; font-weight: 600; color: #0a0a0a; line-height: 1; margin: 1rem 0 0.25rem; }
+      .tier-price {
+        font-family: "EB Garamond", serif;
+        font-size: 2.6rem;
+        font-weight: 600;
+        color: #0a0a0a;
+        line-height: 1;
+        margin: 1rem 0 0.25rem;
+      }
 
-      .tier-card.featured .tier-price { color: var(--gold); }
+      .tier-card.featured .tier-price {
+        color: var(--gold);
+      }
 
-      .tier-note-sm { font-size: 0.82rem; color: var(--text-muted); margin-bottom: 1.5rem; }
+      .tier-note-sm {
+        font-size: 0.82rem;
+        color: var(--text-muted);
+        margin-bottom: 1.5rem;
+      }
 
-      .tier-card.featured .tier-note-sm { color: rgba(255, 255, 255, 0.4); }
+      .tier-card.featured .tier-note-sm {
+        color: rgba(255, 255, 255, 0.4);
+      }
 
-      .tier-divider { height: 1px; background: var(--border); margin: 1.5rem 0; }
+      .tier-divider {
+        height: 1px;
+        background: var(--border);
+        margin: 1.5rem 0;
+      }
 
-      .tier-card.featured .tier-divider { background: rgba(255, 255, 255, 0.1); }
+      .tier-card.featured .tier-divider {
+        background: rgba(255, 255, 255, 0.1);
+      }
 
-      .tier-desc { font-size: 0.92rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 1.5rem; }
+      .tier-desc {
+        font-size: 0.92rem;
+        color: var(--text-muted);
+        line-height: 1.7;
+        margin-bottom: 1.5rem;
+      }
 
-      .tier-card.featured .tier-desc { color: rgba(255, 255, 255, 0.55); }
+      .tier-card.featured .tier-desc {
+        color: rgba(255, 255, 255, 0.55);
+      }
 
-      .tier-list { list-style: none; margin-bottom: 2rem; }
+      .tier-list {
+        list-style: none;
+        margin-bottom: 2rem;
+      }
 
       .tier-list li {
         font-size: 0.9rem;
@@ -397,50 +528,117 @@
         line-height: 1.45;
       }
 
-      .tier-card.featured .tier-list li { color: rgba(255, 255, 255, 0.75); border-bottom-color: rgba(255, 255, 255, 0.07); }
+      .tier-card.featured .tier-list li {
+        color: rgba(255, 255, 255, 0.75);
+        border-bottom-color: rgba(255, 255, 255, 0.07);
+      }
 
       .tier-list li::before {
         content: "";
         position: absolute;
-        left: 0; top: 0.9rem;
-        width: 6px; height: 6px;
+        left: 0;
+        top: 0.9rem;
+        width: 6px;
+        height: 6px;
         border-radius: 50%;
         background: var(--gold);
       }
 
-      .tier-list li:last-child { border-bottom: none; }
+      .tier-list li:last-child {
+        border-bottom: none;
+      }
 
-      .tier-note { font-size: 0.78rem; color: var(--text-muted); text-align: center; margin-top: 0.75rem; font-style: italic; }
+      .tier-note {
+        font-size: 0.78rem;
+        color: var(--text-muted);
+        text-align: center;
+        margin-top: 0.75rem;
+        font-style: italic;
+      }
 
-      .tier-card.featured .tier-note { color: rgba(255, 255, 255, 0.28); }
+      .tier-card.featured .tier-note {
+        color: rgba(255, 255, 255, 0.28);
+      }
 
-      .tier-apply-note { background: rgba(196, 162, 101, 0.08); border: 1px solid rgba(196, 162, 101, 0.2); border-radius: 6px; padding: 1rem 1.25rem; margin-bottom: 1.5rem; }
+      .tier-apply-note {
+        background: rgba(196, 162, 101, 0.08);
+        border: 1px solid rgba(196, 162, 101, 0.2);
+        border-radius: 6px;
+        padding: 1rem 1.25rem;
+        margin-bottom: 1.5rem;
+      }
 
-      .tier-apply-note p { font-size: 0.88rem; color: rgba(255, 255, 255, 0.65); line-height: 1.6; }
+      .tier-apply-note p {
+        font-size: 0.88rem;
+        color: rgba(255, 255, 255, 0.65);
+        line-height: 1.6;
+      }
 
-      .tier-apply-note strong { color: var(--gold); font-weight: 500; }
+      .tier-apply-note strong {
+        color: var(--gold);
+        font-weight: 500;
+      }
 
       /* ── HOW IT WORKS ── */
-      #how { background: var(--off-white); }
+      #how {
+        background: var(--off-white);
+      }
 
-      .steps { margin-top: 3.5rem; display: flex; flex-direction: column; max-width: 720px; }
+      .steps {
+        margin-top: 3.5rem;
+        display: flex;
+        flex-direction: column;
+        max-width: 720px;
+      }
 
-      .step { display: grid; grid-template-columns: 64px 1fr; gap: 1.5rem; padding: 2rem 0; border-bottom: 1px solid var(--border); }
+      .step {
+        display: grid;
+        grid-template-columns: 64px 1fr;
+        gap: 1.5rem;
+        padding: 2rem 0;
+        border-bottom: 1px solid var(--border);
+      }
 
-      .step:last-child { border-bottom: none; }
+      .step:last-child {
+        border-bottom: none;
+      }
 
-      .step-num { font-family: "EB Garamond", serif; font-size: 3rem; font-weight: 600; color: rgba(196, 162, 101, 0.22); line-height: 1; padding-top: 0.1rem; }
+      .step-num {
+        font-family: "EB Garamond", serif;
+        font-size: 3rem;
+        font-weight: 600;
+        color: rgba(196, 162, 101, 0.22);
+        line-height: 1;
+        padding-top: 0.1rem;
+      }
 
-      .step-title { font-family: "EB Garamond", serif; font-size: 1.3rem; font-weight: 600; color: #0a0a0a; margin-bottom: 0.5rem; }
+      .step-title {
+        font-family: "EB Garamond", serif;
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: #0a0a0a;
+        margin-bottom: 0.5rem;
+      }
 
-      .step-body { font-size: 0.95rem; color: var(--text-muted); line-height: 1.8; }
+      .step-body {
+        font-size: 0.95rem;
+        color: var(--text-muted);
+        line-height: 1.8;
+      }
 
       /* ── FAQ ── */
-      #faq { background: var(--white); }
+      #faq {
+        background: var(--white);
+      }
 
-      .faq-list { margin-top: 3rem; max-width: 720px; }
+      .faq-list {
+        margin-top: 3rem;
+        max-width: 720px;
+      }
 
-      .faq-item { border-bottom: 1px solid var(--border); }
+      .faq-item {
+        border-bottom: 1px solid var(--border);
+      }
 
       .faq-question {
         width: 100%;
@@ -460,10 +658,13 @@
         line-height: 1.3;
       }
 
-      .faq-question:hover { color: var(--gold-dark); }
+      .faq-question:hover {
+        color: var(--gold-dark);
+      }
 
       .faq-icon {
-        width: 22px; height: 22px;
+        width: 22px;
+        height: 22px;
         border-radius: 50%;
         border: 1px solid var(--gold);
         flex-shrink: 0;
@@ -478,91 +679,238 @@
         line-height: 1;
       }
 
-      .faq-item.open .faq-icon { transform: rotate(45deg); }
+      .faq-item.open .faq-icon {
+        transform: rotate(45deg);
+      }
 
-      .faq-answer { overflow: hidden; max-height: 0; transition: max-height 0.35s ease; }
+      .faq-answer {
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 0.35s ease;
+      }
 
-      .faq-item.open .faq-answer { max-height: 500px; }
+      .faq-item.open .faq-answer {
+        max-height: 500px;
+      }
 
-      .faq-answer-inner { padding-bottom: 1.4rem; font-size: 0.95rem; color: var(--text-muted); line-height: 1.85; }
+      .faq-answer-inner {
+        padding-bottom: 1.4rem;
+        font-size: 0.95rem;
+        color: var(--text-muted);
+        line-height: 1.85;
+      }
 
       /* ── CONTACT + NEWSLETTER ── */
-      #contact { background: #000; }
+      #contact {
+        background: #000;
+      }
 
-      #contact .section-headline { color: var(--white); }
-      #contact .section-sub { color: rgba(255, 255, 255, 0.45); }
+      #contact .section-headline {
+        color: var(--white);
+      }
+      #contact .section-sub {
+        color: rgba(255, 255, 255, 0.45);
+      }
 
-      .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; margin-top: 3rem; align-items: start; }
+      .contact-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 5rem;
+        margin-top: 3rem;
+        align-items: start;
+      }
 
-      .contact-details { display: flex; flex-direction: column; gap: 1.25rem; margin-top: 2rem; }
-      .contact-item { display: flex; gap: 1rem; align-items: flex-start; }
+      .contact-details {
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+        margin-top: 2rem;
+      }
+      .contact-item {
+        display: flex;
+        gap: 1rem;
+        align-items: flex-start;
+      }
 
-      .contact-icon { width: 38px; height: 38px; border: 1px solid rgba(196, 162, 101, 0.25); border-radius: 4px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+      .contact-icon {
+        width: 38px;
+        height: 38px;
+        border: 1px solid rgba(196, 162, 101, 0.25);
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
 
-      .contact-label { font-size: 0.7rem; letter-spacing: 0.13em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.2rem; }
+      .contact-label {
+        font-size: 0.7rem;
+        letter-spacing: 0.13em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 0.2rem;
+      }
 
-      .contact-value { font-size: 0.95rem; color: rgba(255, 255, 255, 0.65); }
+      .contact-value {
+        font-size: 0.95rem;
+        color: rgba(255, 255, 255, 0.65);
+      }
 
-      .contact-value a { color: rgba(255, 255, 255, 0.65); text-decoration: none; transition: color 0.2s; }
+      .contact-value a {
+        color: rgba(255, 255, 255, 0.65);
+        text-decoration: none;
+        transition: color 0.2s;
+      }
 
-      .contact-value a:hover { color: var(--gold); }
+      .contact-value a:hover {
+        color: var(--gold);
+      }
 
-      .newsletter-box { background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(196, 162, 101, 0.2); border-radius: 8px; padding: 2.5rem 2rem; }
+      .newsletter-box {
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(196, 162, 101, 0.2);
+        border-radius: 8px;
+        padding: 2.5rem 2rem;
+      }
 
-      .newsletter-title { font-family: "EB Garamond", serif; font-size: 1.55rem; font-weight: 600; color: var(--white); margin-bottom: 0.5rem; }
+      .newsletter-title {
+        font-family: "EB Garamond", serif;
+        font-size: 1.55rem;
+        font-weight: 600;
+        color: var(--white);
+        margin-bottom: 0.5rem;
+      }
 
-      .newsletter-sub { font-size: 0.9rem; color: rgba(255, 255, 255, 0.42); line-height: 1.7; margin-bottom: 1.75rem; }
+      .newsletter-sub {
+        font-size: 0.9rem;
+        color: rgba(255, 255, 255, 0.42);
+        line-height: 1.7;
+        margin-bottom: 1.75rem;
+      }
 
-      .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
-      .form-field { display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 0.75rem; }
+      .form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.75rem;
+      }
+      .form-field {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        margin-bottom: 0.75rem;
+      }
 
-      .form-input { background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 4px; padding: 0.75rem 1rem; font-family: "Inter", sans-serif; font-size: 0.9rem; color: var(--white); outline: none; transition: border-color 0.2s; width: 100%; }
+      .form-input {
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 4px;
+        padding: 0.75rem 1rem;
+        font-family: "Inter", sans-serif;
+        font-size: 0.9rem;
+        color: var(--white);
+        outline: none;
+        transition: border-color 0.2s;
+        width: 100%;
+      }
 
-      .form-input::placeholder { color: rgba(255, 255, 255, 0.28); }
-      .form-input:focus { border-color: rgba(196, 162, 101, 0.5); }
+      .form-input::placeholder {
+        color: rgba(255, 255, 255, 0.28);
+      }
+      .form-input:focus {
+        border-color: rgba(196, 162, 101, 0.5);
+      }
 
-      .form-disclaimer { font-size: 0.75rem; color: rgba(255, 255, 255, 0.22); margin-top: 0.75rem; line-height: 1.55; }
+      .form-disclaimer {
+        font-size: 0.75rem;
+        color: rgba(255, 255, 255, 0.22);
+        margin-top: 0.75rem;
+        line-height: 1.55;
+      }
 
       /* ── FINAL CTA ── */
-      #cta { background: #000; text-align: center; padding: 7rem 2rem; border-top: 1px solid rgba(196, 162, 101, 0.1); }
-      #cta .section-headline { color: var(--white); }
-      #cta .section-sub { color: rgba(255, 255, 255, 0.5); margin: 0 auto 2.5rem; }
-      #cta .section-eyebrow { color: var(--gold); }
+      #cta {
+        background: #000;
+        text-align: center;
+        padding: 7rem 2rem;
+        border-top: 1px solid rgba(196, 162, 101, 0.1);
+      }
+      #cta .section-headline {
+        color: var(--white);
+      }
+      #cta .section-sub {
+        color: rgba(255, 255, 255, 0.5);
+        margin: 0 auto 2.5rem;
+      }
+      #cta .section-eyebrow {
+        color: var(--gold);
+      }
 
       /* ── FOOTER ── */
-      footer { background: #000; padding: 2.5rem 2rem; text-align: center; border-top: 1px solid rgba(196, 162, 101, 0.1); }
+      footer {
+        background: #000;
+        padding: 2.5rem 2rem;
+        text-align: center;
+        border-top: 1px solid rgba(196, 162, 101, 0.1);
+      }
 
-      .footer-logo { font-family: "EB Garamond", serif; font-size: 1.1rem; font-weight: 600; color: var(--gold); letter-spacing: 0.06em; margin-bottom: 0.5rem; }
+      .footer-logo {
+        font-family: "EB Garamond", serif;
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: var(--gold);
+        letter-spacing: 0.06em;
+        margin-bottom: 0.5rem;
+      }
 
-      footer p { font-size: 0.78rem; color: rgba(255, 255, 255, 0.22); letter-spacing: 0.04em; }
+      footer p {
+        font-size: 0.78rem;
+        color: rgba(255, 255, 255, 0.22);
+        letter-spacing: 0.04em;
+      }
 
       /* ── RESPONSIVE ── */
       @media (max-width: 768px) {
-        .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
-        .form-row { grid-template-columns: 1fr; }
+        .contact-grid {
+          grid-template-columns: 1fr;
+          gap: 3rem;
+        }
+        .form-row {
+          grid-template-columns: 1fr;
+        }
       }
 
       @media (max-width: 640px) {
-        nav { padding: 0 1.25rem; }
-        .nav-links { display: none; }
-        section { padding: 4rem 1.25rem; }
-        .step { grid-template-columns: 48px 1fr; gap: 1rem; }
-        .tiers-grid { grid-template-columns: 1fr; }
-        .pillars-grid { grid-template-columns: 1fr; }
+        nav {
+          padding: 0 1.25rem;
+        }
+        .nav-links {
+          display: none;
+        }
+        section {
+          padding: 4rem 1.25rem;
+        }
+        .step {
+          grid-template-columns: 48px 1fr;
+          gap: 1rem;
+        }
+        .tiers-grid {
+          grid-template-columns: 1fr;
+        }
+        .pillars-grid {
+          grid-template-columns: 1fr;
+        }
       }
     </style>
   </head>
   <body>
-
-    <!-- WEBINAR BANNER -->
-    <div style="background:var(--gold);color:#000;text-align:center;padding:0.6rem 1rem;font-family:'Inter',sans-serif;font-size:0.88rem;font-weight:600;letter-spacing:0.03em;position:relative;z-index:101;">
-      🔴 LIVE WEBINAR TONIGHT AT 8PM CENTRAL &nbsp;&mdash;&nbsp;
-      <a href="https://event.webinarjam.com/0qgm03/go/live/8wg5pnsyips0so" target="_blank" style="color:#000;text-decoration:underline;font-weight:700;">Click Here to Join Now &rarr;</a>
-    </div>
-
     <!-- NAV -->
     <nav>
-      <a href="#hero" class="nav-logo"><img src="logo.png" alt="Merchant Oil Academy" style="height:54px;width:auto;display:block;" /></a>
+      <a href="#hero" class="nav-logo"
+        ><img
+          src="logo.png"
+          alt="Merchant Oil Academy"
+          style="height: 54px; width: auto; display: block"
+      /></a>
       <ul class="nav-links">
         <li><a href="#story">Our Story</a></li>
         <li><a href="#isthisyou">Is This You</a></li>
@@ -582,10 +930,29 @@
       </video>
       <div class="bg-glow"></div>
       <div class="hero-inner">
-        <img src="logo.png" alt="Merchant Oil Academy" style="width:300px;max-width:75%;margin:0 auto 2rem;display:block;" />
-        <h1 class="hero-headline">Trillion Dollar Markets Don't Let Just Anyone In.<br /><em>We Found a Way. Now We're Bringing the Right People With Us.</em></h1>
+        <img
+          src="logo.png"
+          alt="Merchant Oil Academy"
+          style="
+            width: 300px;
+            max-width: 75%;
+            margin: 0 auto 2rem;
+            display: block;
+          "
+        />
+        <h1 class="hero-headline">
+          Trillion Dollar Markets Don't Let Just Anyone In.<br /><em
+            >We Found a Way. Now We're Bringing the Right People With Us.</em
+          >
+        </h1>
         <div class="hero-rule"></div>
-        <p class="hero-sub">We spent years building real relationships with operators and refiners out of Houston. We now have direct access to verified product allocations that most brokers spend a career trying to find. If you are self-motivated, hungry, and ready to bet on yourself -- we want to show you what is possible.</p>
+        <p class="hero-sub">
+          We spent years building real relationships with operators and refiners
+          out of Houston. We now have direct access to verified product
+          allocations that most brokers spend a career trying to find. If you
+          are self-motivated, hungry, and ready to bet on yourself -- we want to
+          show you what is possible.
+        </p>
         <div class="btn-group">
           <a href="apply.html" class="btn-primary">Schedule a Call</a>
         </div>
@@ -597,20 +964,78 @@
       <div class="container">
         <div class="story-inner">
           <p class="section-eyebrow">How We Got Here</p>
-          <h2 class="section-headline">We Took the Hard Road So You Don't Have To.</h2>
+          <h2 class="section-headline">
+            We Took the Hard Road So You Don't Have To.
+          </h2>
 
-          <div style="padding:56.25% 0 0 0;position:relative;border-radius:8px;overflow:hidden;margin:2.5rem 0;">
-            <iframe src="https://player.vimeo.com/video/1176264445?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share;" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="MOA - Merchant Oil Academy"></iframe>
+          <div
+            style="
+              padding: 56.25% 0 0 0;
+              position: relative;
+              border-radius: 8px;
+              overflow: hidden;
+              margin: 2.5rem 0;
+            "
+          >
+            <iframe
+              src="https://player.vimeo.com/video/1176264445?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+              frameborder="0"
+              allow="
+                autoplay;
+                fullscreen;
+                picture-in-picture;
+                clipboard-write;
+                encrypted-media;
+                web-share;
+              "
+              referrerpolicy="strict-origin-when-cross-origin"
+              style="
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+              "
+              title="MOA - Merchant Oil Academy"
+            ></iframe>
           </div>
           <script src="https://player.vimeo.com/api/player.js"></script>
 
           <div class="story-copy">
-            <p>Between our team we have spent over 15 years inside the Houston and European energy markets. Not studying it. Not reading about it. Actually in it, building relationships with operators, negotiating with refiners, moving product, and learning exactly how deals get done at every level of the supply chain.</p>
-            <p>We have worked with major refiners. We have navigated Government fuel contracts. We have seen what separates the brokers who close from the ones who disappear after six months. And we have built a network of verified product allocations that most people in this industry spend a decade trying to access.</p>
-            <p>For a long time that access stayed internal. Our team used it, our partners used it, and that was it.</p>
+            <p>
+              Between our team we have spent over 15 years inside the Houston
+              and European energy markets. Not studying it. Not reading about
+              it. Actually in it, building relationships with operators,
+              negotiating with refiners, moving product, and learning exactly
+              how deals get done at every level of the supply chain.
+            </p>
+            <p>
+              We have worked with major refiners. We have navigated Government
+              fuel contracts. We have seen what separates the brokers who close
+              from the ones who disappear after six months. And we have built a
+              network of verified product allocations that most people in this
+              industry spend a decade trying to access.
+            </p>
+            <p>
+              For a long time that access stayed internal. Our team used it, our
+              partners used it, and that was it.
+            </p>
             <p>We are changing that now.</p>
-            <p>We are growing our team and we are doing it deliberately. We are not looking for hundreds of people. We are looking for a small group of motivated, coachable individuals who want to learn this industry the right way, from people who are actually in it, and who are ready to work real deals with real product behind them from day one.</p>
-            <p><strong>This is not a course. This is an invitation to join a team that has already done the hard work of building what most brokers never find.</strong></p>
+            <p>
+              We are growing our team and we are doing it deliberately. We are
+              not looking for hundreds of people. We are looking for a small
+              group of motivated, coachable individuals who want to learn this
+              industry the right way, from people who are actually in it, and
+              who are ready to work real deals with real product behind them
+              from day one.
+            </p>
+            <p>
+              <strong
+                >This is not a course. This is an invitation to join a team that
+                has already done the hard work of building what most brokers
+                never find.</strong
+              >
+            </p>
           </div>
         </div>
       </div>
@@ -621,37 +1046,71 @@
       <div class="container">
         <div class="isthisyou-inner">
           <p class="section-eyebrow">Who This Is For</p>
-          <h2 class="section-headline">This Is for the Person Who Bets on Themselves.</h2>
-          <p class="section-sub">We are not looking for everyone. We are looking for a specific kind of person.</p>
+          <h2 class="section-headline">
+            This Is for the Person Who Bets on Themselves.
+          </h2>
+          <p class="section-sub">
+            We are not looking for everyone. We are looking for a specific kind
+            of person.
+          </p>
 
           <ul class="qualifier-list">
             <li>
               <span class="qualifier-dot"></span>
-              <span><strong>You are self-motivated.</strong> You do not need someone to push you -- you push yourself.</span>
+              <span
+                ><strong>You are self-motivated.</strong> You do not need
+                someone to push you -- you push yourself.</span
+              >
             </li>
             <li>
               <span class="qualifier-dot"></span>
-              <span><strong>You come from sales, entrepreneurship, or any background</strong> where you have had to build something from scratch.</span>
+              <span
+                ><strong
+                  >You come from sales, entrepreneurship, or any
+                  background</strong
+                >
+                where you have had to build something from scratch.</span
+              >
             </li>
             <li>
               <span class="qualifier-dot"></span>
-              <span><strong>You are hungry for an opportunity that matches your actual potential,</strong> not just your resume.</span>
+              <span
+                ><strong
+                  >You are hungry for an opportunity that matches your actual
+                  potential,</strong
+                >
+                not just your resume.</span
+              >
             </li>
             <li>
               <span class="qualifier-dot"></span>
-              <span><strong>You understand that real income takes real work,</strong> and you are not scared of either.</span>
+              <span
+                ><strong
+                  >You understand that real income takes real work,</strong
+                >
+                and you are not scared of either.</span
+              >
             </li>
             <li>
               <span class="qualifier-dot"></span>
-              <span><strong>You are a strong communicator</strong> who can build relationships and earn trust.</span>
+              <span
+                ><strong>You are a strong communicator</strong> who can build
+                relationships and earn trust.</span
+              >
             </li>
             <li>
               <span class="qualifier-dot"></span>
-              <span><strong>You are ready to learn a new industry</strong> and go all in on it.</span>
+              <span
+                ><strong>You are ready to learn a new industry</strong> and go
+                all in on it.</span
+              >
             </li>
           </ul>
 
-          <p class="isthisyou-closing">"If you read that list and felt like we wrote it about you -- let's get on a call and talk about it."</p>
+          <p class="isthisyou-closing">
+            "If you read that list and felt like we wrote it about you -- let's
+            get on a call and talk about it."
+          </p>
 
           <a href="apply.html" class="btn-primary">Schedule a Call</a>
         </div>
@@ -662,22 +1121,39 @@
     <section id="different">
       <div class="container">
         <p class="section-eyebrow">Why MOA Is Different</p>
-        <h2 class="section-headline">This Is Not a Course. This Is an Open Door.</h2>
+        <h2 class="section-headline">
+          This Is Not a Course. This Is an Open Door.
+        </h2>
         <div class="pillars-grid">
           <div class="pillar">
             <div class="pillar-number">01</div>
             <h3 class="pillar-title">We Have Real Product</h3>
-            <p class="pillar-body">Most programs teach you theory and leave you on your own to find product. We have a direct relationship with a Houston-based operator holding verified allocations from major U.S. refiners. When you find a buyer, you have a real place to take them.</p>
+            <p class="pillar-body">
+              Most programs teach you theory and leave you on your own to find
+              product. We have a direct relationship with a Houston-based
+              operator holding verified allocations from major U.S. refiners.
+              When you find a buyer, you have a real place to take them.
+            </p>
           </div>
           <div class="pillar">
             <div class="pillar-number">02</div>
             <h3 class="pillar-title">You Are on the Team.</h3>
-            <p class="pillar-body">When you join the Accelerator you are not a student -- you are a team member. You get business cards with your name on them. You get apparel. You get access to our deal flow. You are not learning from the sidelines. You are in the game from day one.</p>
+            <p class="pillar-body">
+              When you join the Accelerator you are not a student -- you are a
+              team member. You get business cards with your name on them. You
+              get apparel. You get access to our deal flow. You are not learning
+              from the sidelines. You are in the game from day one.
+            </p>
           </div>
           <div class="pillar">
             <div class="pillar-number">03</div>
             <h3 class="pillar-title">We Are Honest About What It Takes</h3>
-            <p class="pillar-body">This is not a get-rich-quick pitch. Building relationships in commodity markets takes time and persistence. We will be straight with you about the timeline and the work required. And we will be with you every step of the way until you close.</p>
+            <p class="pillar-body">
+              This is not a get-rich-quick pitch. Building relationships in
+              commodity markets takes time and persistence. We will be straight
+              with you about the timeline and the work required. And we will be
+              with you every step of the way until you close.
+            </p>
           </div>
         </div>
       </div>
@@ -687,49 +1163,78 @@
     <section id="how">
       <div class="container">
         <p class="section-eyebrow">The Path</p>
-        <h2 class="section-headline">From Your First Conversation to Your First Closed Deal.</h2>
+        <h2 class="section-headline">
+          From Your First Conversation to Your First Closed Deal.
+        </h2>
         <p class="section-sub">Here is exactly what the journey looks like.</p>
         <div class="steps">
           <div class="step">
             <div class="step-num">01</div>
             <div>
               <h3 class="step-title">Schedule a Call</h3>
-              <p class="step-body">We get on a call first. We want to understand your background, your goals, and whether this is the right fit. We are building a team, not selling seats.</p>
+              <p class="step-body">
+                We get on a call first. We want to understand your background,
+                your goals, and whether this is the right fit. We are building a
+                team, not selling seats.
+              </p>
             </div>
           </div>
           <div class="step">
             <div class="step-num">02</div>
             <div>
               <h3 class="step-title">Learn the Landscape</h3>
-              <p class="step-body">Work through our structured course material at your own pace. Industry terminology, deal stages, document types, compliance, and how our supply network operates. Everything you need, nothing you don't.</p>
+              <p class="step-body">
+                Work through our structured course material at your own pace.
+                Industry terminology, deal stages, document types, compliance,
+                and how our supply network operates. Everything you need,
+                nothing you don't.
+              </p>
             </div>
           </div>
           <div class="step">
             <div class="step-num">03</div>
             <div>
               <h3 class="step-title">Build Your Strategy</h3>
-              <p class="step-body">Before you reach out to a single person, we get on a 1-on-1 call with you. We learn about your network and your strengths. Then we build a prospecting approach designed specifically for you.</p>
+              <p class="step-body">
+                Before you reach out to a single person, we get on a 1-on-1 call
+                with you. We learn about your network and your strengths. Then
+                we build a prospecting approach designed specifically for you.
+              </p>
             </div>
           </div>
           <div class="step">
             <div class="step-num">04</div>
             <div>
               <h3 class="step-title">Start Prospecting With Support</h3>
-              <p class="step-body">You begin outreach with a real plan and a real team behind you. Direct access to our founders when you need guidance. You are never doing this alone.</p>
+              <p class="step-body">
+                You begin outreach with a real plan and a real team behind you.
+                Direct access to our founders when you need guidance. You are
+                never doing this alone.
+              </p>
             </div>
           </div>
           <div class="step">
             <div class="step-num">05</div>
             <div>
               <h3 class="step-title">Bring a Buyer. We Help You Close.</h3>
-              <p class="step-body">When you identify a qualified buyer our team steps in. We connect you to our supply network, help facilitate the documentation, and support the deal all the way through to close. This is where every other program falls apart. This is where we deliver.</p>
+              <p class="step-body">
+                When you identify a qualified buyer our team steps in. We
+                connect you to our supply network, help facilitate the
+                documentation, and support the deal all the way through to
+                close. This is where every other program falls apart. This is
+                where we deliver.
+              </p>
             </div>
           </div>
           <div class="step">
             <div class="step-num">06</div>
             <div>
               <h3 class="step-title">Get Paid. Keep Going.</h3>
-              <p class="step-body">Close your first deal and earn real income. Your enrollment investment is structured to pay for itself. Then you keep building with a clear path to higher earnings as you grow.</p>
+              <p class="step-body">
+                Close your first deal and earn real income. Your enrollment
+                investment is structured to pay for itself. Then you keep
+                building with a clear path to higher earnings as you grow.
+              </p>
             </div>
           </div>
         </div>
@@ -742,13 +1247,19 @@
         <p class="section-eyebrow">Frequently Asked Questions</p>
         <h2 class="section-headline">Let's Be Straight With Each Other.</h2>
         <div class="faq-list">
-
           <div class="faq-item">
             <button class="faq-question" onclick="toggleFaq(this)">
               Do I need experience in oil or commodities?
               <span class="faq-icon">+</span>
             </button>
-            <div class="faq-answer"><p class="faq-answer-inner">No. Some of the best brokers come from completely outside this industry. What matters is that you are a strong communicator, self-motivated, and willing to learn. We teach you everything else.</p></div>
+            <div class="faq-answer">
+              <p class="faq-answer-inner">
+                No. Some of the best brokers come from completely outside this
+                industry. What matters is that you are a strong communicator,
+                self-motivated, and willing to learn. We teach you everything
+                else.
+              </p>
+            </div>
           </div>
 
           <div class="faq-item">
@@ -756,7 +1267,16 @@
               How long until I close my first deal?
               <span class="faq-icon">+</span>
             </button>
-            <div class="faq-answer"><p class="faq-answer-inner">There is no guaranteed timeline and we will never pretend there is. Commodity deals take time to develop. What we can tell you is that you will have real product, real mentorship, and a team that does not disappear when things get hard. It took us nearly a year of building before we were in a position to close. We are here to shorten that timeline significantly for you.</p></div>
+            <div class="faq-answer">
+              <p class="faq-answer-inner">
+                There is no guaranteed timeline and we will never pretend there
+                is. Commodity deals take time to develop. What we can tell you
+                is that you will have real product, real mentorship, and a team
+                that does not disappear when things get hard. It took us nearly
+                a year of building before we were in a position to close. We are
+                here to shorten that timeline significantly for you.
+              </p>
+            </div>
           </div>
 
           <div class="faq-item">
@@ -764,7 +1284,15 @@
               What products do you have access to?
               <span class="faq-icon">+</span>
             </button>
-            <div class="faq-answer"><p class="faq-answer-inner">Our supply network includes ULSD, EN590, Jet A-1, D6 fuel oil, and other refined petroleum products through verified allocations from major U.S. refiners out of Houston. We are also expanding into critical minerals including Bauxite, Copper, and Antimony Ore.</p></div>
+            <div class="faq-answer">
+              <p class="faq-answer-inner">
+                Our supply network includes ULSD, EN590, Jet A-1, D6 fuel oil,
+                and other refined petroleum products through verified
+                allocations from major U.S. refiners out of Houston. We are also
+                expanding into critical minerals including Bauxite, Copper, and
+                Antimony Ore.
+              </p>
+            </div>
           </div>
 
           <div class="faq-item">
@@ -772,7 +1300,13 @@
               Why do I have to schedule a call?
               <span class="faq-icon">+</span>
             </button>
-            <div class="faq-answer"><p class="faq-answer-inner">Because we are selective. We are investing our time in you, which means we need to know you are serious before either of us commits. The call is a conversation, not a barrier.</p></div>
+            <div class="faq-answer">
+              <p class="faq-answer-inner">
+                Because we are selective. We are investing our time in you,
+                which means we need to know you are serious before either of us
+                commits. The call is a conversation, not a barrier.
+              </p>
+            </div>
           </div>
 
           <div class="faq-item">
@@ -780,7 +1314,16 @@
               Is this a scam?
               <span class="faq-icon">+</span>
             </button>
-            <div class="faq-answer"><p class="faq-answer-inner">We get why you are asking and we respect it. This space is full of programs that overpromise and underdeliver. We know because we paid for one. Here is what makes us different -- we have real product, we get on a call with you before you spend a dollar, and our success depends entirely on yours. We have no reason to take your money and disappear.</p></div>
+            <div class="faq-answer">
+              <p class="faq-answer-inner">
+                We get why you are asking and we respect it. This space is full
+                of programs that overpromise and underdeliver. We know because
+                we paid for one. Here is what makes us different -- we have real
+                product, we get on a call with you before you spend a dollar,
+                and our success depends entirely on yours. We have no reason to
+                take your money and disappear.
+              </p>
+            </div>
           </div>
 
           <div class="faq-item">
@@ -788,7 +1331,13 @@
               How much time do I need to commit?
               <span class="faq-icon">+</span>
             </button>
-            <div class="faq-answer"><p class="faq-answer-inner">This can be done alongside a full-time job but it is not passive. Expect 5 to 10 hours a week on learning, outreach, and relationship building especially in the first few months.</p></div>
+            <div class="faq-answer">
+              <p class="faq-answer-inner">
+                This can be done alongside a full-time job but it is not
+                passive. Expect 5 to 10 hours a week on learning, outreach, and
+                relationship building especially in the first few months.
+              </p>
+            </div>
           </div>
 
           <div class="faq-item">
@@ -796,9 +1345,15 @@
               What if I just want the Resource Kit?
               <span class="faq-icon">+</span>
             </button>
-            <div class="faq-answer"><p class="faq-answer-inner">That is completely fine. The Resource Kit is a comprehensive introduction to commodity brokering that stands on its own. You will learn more from it than most expensive programs offer. If you decide later you want to go deeper, we will be here.</p></div>
+            <div class="faq-answer">
+              <p class="faq-answer-inner">
+                That is completely fine. The Resource Kit is a comprehensive
+                introduction to commodity brokering that stands on its own. You
+                will learn more from it than most expensive programs offer. If
+                you decide later you want to go deeper, we will be here.
+              </p>
+            </div>
           </div>
-
         </div>
       </div>
     </section>
@@ -810,20 +1365,45 @@
         <h2 class="section-headline">We Are Here to Talk.</h2>
         <div class="contact-grid">
           <div>
-            <p class="section-sub">Have a question before committing to anything? Reach out directly. We read every message and respond within 24 hours.</p>
+            <p class="section-sub">
+              Have a question before committing to anything? Reach out directly.
+              We read every message and respond within 24 hours.
+            </p>
             <div class="contact-details">
               <div class="contact-item">
                 <div class="contact-icon">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(196,162,101,0.8)" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="rgba(196,162,101,0.8)"
+                    stroke-width="1.5"
+                  >
+                    <rect x="2" y="4" width="20" height="16" rx="2" />
+                    <path d="m2 7 10 7 10-7" />
+                  </svg>
                 </div>
                 <div>
                   <p class="contact-label">Email</p>
-                  <p class="contact-value"><a href="mailto:sales@moaoil.com">sales@moaoil.com</a></p>
+                  <p class="contact-value">
+                    <a href="mailto:sales@moaoil.com">sales@moaoil.com</a>
+                  </p>
                 </div>
               </div>
               <div class="contact-item">
                 <div class="contact-icon">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(196,162,101,0.8)" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="rgba(196,162,101,0.8)"
+                    stroke-width="1.5"
+                  >
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
                 </div>
                 <div>
                   <p class="contact-label">Based In</p>
@@ -832,7 +1412,17 @@
               </div>
               <div class="contact-item">
                 <div class="contact-icon">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(196,162,101,0.8)" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="rgba(196,162,101,0.8)"
+                    stroke-width="1.5"
+                  >
+                    <circle cx="12" cy="12" r="10" />
+                    <polyline points="12 6 12 12 16 14" />
+                  </svg>
                 </div>
                 <div>
                   <p class="contact-label">Response Time</p>
@@ -840,23 +1430,53 @@
                 </div>
               </div>
             </div>
-            <div style="margin-top:2.5rem;">
+            <div style="margin-top: 2.5rem">
               <a href="apply.html" class="btn-primary">Schedule a Call</a>
             </div>
           </div>
 
           <div class="newsletter-box">
             <h3 class="newsletter-title">Stay in the Know.</h3>
-            <p class="newsletter-sub">We send a newsletter covering how the commodity brokering world actually works, what real deals look like in practice, and what we are seeing in the market. No pitches. No spam. Just useful information for people serious about this industry.</p>
+            <p class="newsletter-sub">
+              We send a newsletter covering how the commodity brokering world
+              actually works, what real deals look like in practice, and what we
+              are seeing in the market. No pitches. No spam. Just useful
+              information for people serious about this industry.
+            </p>
             <div class="form-field">
               <div class="form-row">
-                <input type="text" id="nl-first" class="form-input" placeholder="First name" />
-                <input type="text" id="nl-last" class="form-input" placeholder="Last name" />
+                <input
+                  type="text"
+                  id="nl-first"
+                  class="form-input"
+                  placeholder="First name"
+                />
+                <input
+                  type="text"
+                  id="nl-last"
+                  class="form-input"
+                  placeholder="Last name"
+                />
               </div>
-              <input type="email" id="nl-email" class="form-input" placeholder="Email address" />
-              <button id="nl-btn" class="btn-primary" style="width:100%;text-align:center;" onclick="handleNewsletterSignup()">Subscribe to the Newsletter</button>
+              <input
+                type="email"
+                id="nl-email"
+                class="form-input"
+                placeholder="Email address"
+              />
+              <button
+                id="nl-btn"
+                class="btn-primary"
+                style="width: 100%; text-align: center"
+                onclick="handleNewsletterSignup()"
+              >
+                Subscribe to the Newsletter
+              </button>
             </div>
-            <p class="form-disclaimer">We respect your privacy. Unsubscribe anytime. We will never share your information.</p>
+            <p class="form-disclaimer">
+              We respect your privacy. Unsubscribe anytime. We will never share
+              your information.
+            </p>
           </div>
         </div>
       </div>
@@ -867,7 +1487,11 @@
       <div class="container">
         <p class="section-eyebrow">The Door Is Open</p>
         <h2 class="section-headline">Curious? Let's Just Talk.</h2>
-        <p class="section-sub">No pressure, no commitment. Tell us a little about yourself, we will reach out to schedule a call, and we can figure out together if this is the right fit.</p>
+        <p class="section-sub">
+          No pressure, no commitment. Tell us a little about yourself, we will
+          reach out to schedule a call, and we can figure out together if this
+          is the right fit.
+        </p>
         <div class="btn-group">
           <a href="apply.html" class="btn-primary">Schedule a Call</a>
         </div>
@@ -877,15 +1501,77 @@
     <!-- FOOTER -->
     <footer>
       <p class="footer-logo">Merchant Oil Academy</p>
-      <div style="display:flex;justify-content:center;gap:1.5rem;margin:1rem 0;">
-        <a href="https://www.instagram.com/moaoil1/" target="_blank" style="color:rgba(255,255,255,0.4);transition:color 0.2s;" onmouseover="this.style.color='#C4A265'" onmouseout="this.style.color='rgba(255,255,255,0.4)'">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg>
+      <div
+        style="
+          display: flex;
+          justify-content: center;
+          gap: 1.5rem;
+          margin: 1rem 0;
+        "
+      >
+        <a
+          href="https://www.instagram.com/moaoil1/"
+          target="_blank"
+          style="color: rgba(255, 255, 255, 0.4); transition: color 0.2s"
+          onmouseover="this.style.color = '#C4A265'"
+          onmouseout="this.style.color = 'rgba(255,255,255,0.4)'"
+        >
+          <svg
+            width="22"
+            height="22"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <rect x="2" y="2" width="20" height="20" rx="5" />
+            <circle cx="12" cy="12" r="4" />
+            <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" />
+          </svg>
         </a>
-        <a href="https://www.tiktok.com/@moaoil3?_r=1&_t=ZP-94xcRj8Mj67" target="_blank" style="color:rgba(255,255,255,0.4);transition:color 0.2s;" onmouseover="this.style.color='#C4A265'" onmouseout="this.style.color='rgba(255,255,255,0.4)'">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
+        <a
+          href="https://www.tiktok.com/@moaoil3?_r=1&_t=ZP-94xcRj8Mj67"
+          target="_blank"
+          style="color: rgba(255, 255, 255, 0.4); transition: color 0.2s"
+          onmouseover="this.style.color = '#C4A265'"
+          onmouseout="this.style.color = 'rgba(255,255,255,0.4)'"
+        >
+          <svg
+            width="22"
+            height="22"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
+          </svg>
         </a>
-        <a href="https://www.facebook.com/profile.php?id=61578826244256" target="_blank" style="color:rgba(255,255,255,0.4);transition:color 0.2s;" onmouseover="this.style.color='#C4A265'" onmouseout="this.style.color='rgba(255,255,255,0.4)'">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        <a
+          href="https://www.facebook.com/profile.php?id=61578826244256"
+          target="_blank"
+          style="color: rgba(255, 255, 255, 0.4); transition: color 0.2s"
+          onmouseover="this.style.color = '#C4A265'"
+          onmouseout="this.style.color = 'rgba(255,255,255,0.4)'"
+        >
+          <svg
+            width="22"
+            height="22"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path
+              d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+            />
+          </svg>
         </a>
       </div>
       <p>&copy; 2026 Merchant Oil Academy &nbsp;&middot;&nbsp; moaoil.com</p>
@@ -895,7 +1581,9 @@
       function toggleFaq(btn) {
         var item = btn.closest(".faq-item");
         var isOpen = item.classList.contains("open");
-        document.querySelectorAll(".faq-item.open").forEach(function(el) { el.classList.remove("open"); });
+        document.querySelectorAll(".faq-item.open").forEach(function (el) {
+          el.classList.remove("open");
+        });
         if (!isOpen) item.classList.add("open");
       }
 
@@ -906,7 +1594,7 @@
         if (!first || !email || !email.includes("@")) {
           btn.textContent = "Please fill in your name and a valid email.";
           btn.style.background = "#888";
-          setTimeout(function() {
+          setTimeout(function () {
             btn.textContent = "Subscribe to the Newsletter";
             btn.style.background = "";
           }, 2500);
